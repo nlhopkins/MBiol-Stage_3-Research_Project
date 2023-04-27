@@ -100,6 +100,7 @@ y <- binding %>%
 z <- inner_join(x, y)
 
 
+
 x <- binding %>%
     filter(binding == "h3k27ac") %>%
     filter(bound == "1") %>%
@@ -213,7 +214,7 @@ data %>%
 
 
 #### bound genes by position ####
-binding <- total %>%
+total_binding <- total %>%
     mutate(condition = case_when(grepl("ed", target) ~ "ed",
                                  grepl("dox", target) ~ "dox")) %>%
     unique() %>%
@@ -244,7 +245,7 @@ binding <- total %>%
     ) %>% mutate(star = case_when(grepl("h3k", target) ~ "***"))
 
 
-binding %>% ggplot(aes(
+total_binding  %>% ggplot(aes(
     x = factor(
         position,
         levels = c("upstream", "downstream"),
@@ -302,7 +303,7 @@ binding %>% ggplot(aes(
               colour = "black",
               size = 10)
 
-binding %>% ggplot(aes(
+total_binding  %>% ggplot(aes(
     x = factor(
         condition,
         levels = c("ed", "dox"),

@@ -1,5 +1,7 @@
 library(tidyverse)
 
+load("environments/clusters.RData")
+
 clusters <- c(
     "ALOXE",
     "",
@@ -21,6 +23,8 @@ clusters <- c(
     "",
     "",
     "Glu-TTC",
+    "",
+    "",
     "",
     "",
     "",
@@ -73,6 +77,8 @@ trnas <- c(
     "tRNA-Glu-TTC-1-2",
     "tRNA-Glu-TTC-2-1",
     "tRNA-Glu-TTC-2-2",
+    "tRNA-Glu-TTC-3-1",
+    "tRNA-Glu-TTC-4-1",
     "tRNA-Glu-TTC-4-2",
     "tRNA-iMet-CAT-1-1",
     "tRNA-iMet-CAT-1-2",
@@ -147,6 +153,7 @@ func <- c(
 )
 
 
+
 df <- list(aloxe,
            ebersole,
            hes,
@@ -156,20 +163,35 @@ df <- list(aloxe,
            gluttc,
            imet,
            met,
-           sec) %>% reduce(full_join) %>% mutate(ed_activity = ifelse(ed_activity == "1", "Active", "Inactive")) %>% mutate(ed_activity = ifelse(dox_activity == "1", "Active", "Inactive")) %>% mutate_if(is.numeric, ~
-                                                                                                                                                                                                              round(., 2))
+           sec) %>%
+    reduce(full_join) %>%
+    mutate(ed_activity = ifelse(ed_activity == "1", "Active", "Inactive")) %>%
+    mutate(dox_activity = ifelse(dox_activity == "1", "Active", "Inactive")) %>%
+    mutate_if(is.numeric, ~ round(., 2)) %>%
+    rename(
+        "-Dox Activity" = ed_activity,
+        "+Dox Activity" = dox_activity,
+        "FOXA1 Fold Change" = fox_fold,
+        "H3K27ac Fold Change" = h3_fold
+    ) %>% select(c("group", "name","func", "+Dox Activity", "-Dox Activity", "FOXA1 Fold Change","H3K27ac Fold Change"))
 
+df <- df[, c("group", "name", "func", "-Dox Activity", "+Dox Activity", "FOXA1 Fold Change", "H3K27ac Fold Change")]
+
+group <-
+    df %>% select("group")
+
+func <-
+    df %>% select("func")
 
 dox <-
-    df[match(trnas, df$name), ] %>% select(dox_activity)  %>% as.list()
+    df %>% select("+Dox Activity")
 
 ed <-
-    df[match(trnas, df$name), ] %>% select(ed_activity)  %>% as.list()
-
+    df %>% select("-Dox Activity")
 fox <-
-    df[match(trnas, df$name), ] %>% select(fox_fold)  %>% as.list()
+    df %>% select("FOXA1 Fold Change")
 
 h3 <-
-    df[match(trnas, df$name), ] %>% select(h3_fold)  %>% as.list()
+    df %>% select("H3K27ac Fold Change")
 
-save.image(file = 'environments/trna.RData')
+save.image(file = "environments/trna.RData")

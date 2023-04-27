@@ -1,0 +1,73 @@
+---
+output: 
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    keep_tex: true
+    number_sections: false
+    fig_caption: true
+    toc: false
+geometry: "left=2.5cm,right=2.5cm,top=2cm,bottom=2cm"
+linestretch: 1.2
+fontsize: 12pt
+indent: true
+mainfont: Charter
+bibliography: refs.bib
+citation-style: ../csl/nature-publishing-group-vancouver.csl
+link-citations: true
+citecolor: teal
+linkcolor: teal
+urlcolor: teal
+header-includes:
+- \usepackage[labelsep=period]{caption}
+- \usepackage[labelfont=bf]{caption}
+- \usepackage{booktabs}
+- \usepackage{caption}
+- \usepackage{microtype}
+- \usepackage{sectsty}
+- \captionsetup[figure]{font=small}
+- \captionsetup[table]{font=small}
+- \captionsetup[table]{justification=justified}
+- \captionsetup[figure]{justification=justified}
+- \usepackage{epigrafica}
+- \usepackage{epigrafica}
+- \usepackage[LGR,OT1]{fontenc}
+- \normalfont
+editor_options: 
+    markdown:
+      canonical: true 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+    echo = FALSE,
+    message = FALSE,
+    warning = FALSE,
+    fig.align = "top",
+    fig.pos = "p",
+    out.width = '100%',
+    fig.fullwidth = TRUE,
+    fig.show = 'hold'
+)
+```
+
+```{r}
+library(tidyverse) # Load the tidyverse. Functions are used for tidying data and creating plots via ggplot2.
+
+library(kableExtra) # Load kableExtra. Table generation.
+
+library(wordcountaddin) # Load wordcountaddin. Counts words and characters in text in an R markdown document.
+
+library(rmdwc)
+```
+
+```{r 2, out.width = '100%', fig.cap = " Heatmaps of -Dox and +Dox input peaks at hg19 tRNA genes in MCF-7 cells. Windows represent ±10kb from the centre of the gene. N = 416. "}
+knitr::include_graphics("../images/supp_02.png")
+```
+
+```{r 1, out.width = '100%', fig.cap = "Bar plot of the percentage of active and inactive tDNAs with or without FOXA1 OE"}
+knitr::include_graphics("../images/supp_01.png")
+```
+
+```{r 3, out.width = '100%', fig.cap = "MEME-SEA output of A and B box promoter sequences identified in activated tDNAs which significantly gained both FOXA1 and H3K27ac enrichment."}
+knitr::include_graphics("../images/supp_03.png")
+```

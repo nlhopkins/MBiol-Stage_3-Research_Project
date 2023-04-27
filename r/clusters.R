@@ -1,7 +1,7 @@
 diff <-
-    diffexpressed %>% select(c("name", "diffexpressed", "comparison")) %>% 
+    diffexpressed %>% select(c("name", "diffexpressed", "comparison")) %>%
     pivot_wider(names_from = "comparison",
-                                                                                       values_from = "diffexpressed")
+                values_from = "diffexpressed")
 
 
 p <- data  %>% pivot_wider(
@@ -17,7 +17,7 @@ p <- data  %>% pivot_wider(
     
     mutate(dox_activity = ifelse(dox_h3k27ac > activity_threshold,
                                  "1",
-                                 "0")) 
+                                 "0"))
 
 imet <- p %>% filter(
     name %in% c(
@@ -31,7 +31,8 @@ imet <- p %>% filter(
         "tRNA-iMet-CAT-1-8",
         "tRNA-iMet-CAT-2-1"
     )
-)
+) %>% mutate(group = "iMET",
+             func = "Transcription Initiation")
 
 
 met <- p %>% filter(
@@ -47,7 +48,8 @@ met <- p %>% filter(
         "tRNA-Met-CAT-6-1",
         "tRNA-Met-CAT-7-1"
     )
-)
+) %>% mutate(group = "MET",
+             func = "iMET Control")
 
 
 
@@ -58,7 +60,8 @@ argccg <- p %>% filter(
         "tRNA-Arg-CCG-1-3",
         "tRNA-Arg-CCG-2-1"
     )
-)
+) %>% mutate(group = "Arg-CCG",
+             func = "Promotes Breast Cancer Metastasis")
 
 gluttc <- p %>% filter(
     name %in% c(
@@ -66,19 +69,17 @@ gluttc <- p %>% filter(
         "tRNA-Glu-TTC-1-2",
         "tRNA-Glu-TTC-2-1",
         "tRNA-Glu-TTC-2-2",
-        "tRNA-Glu-TTC-4-2",
-        "tRNA-Glu-TTC-5-1",
-        "tRNA-Glu-TTC-6-1",
-        "tRNA-Glu-TTC-7-1",
-        "tRNA-Glu-TTC-8-1",
-        "tRNA-Glu-TTC-9-1",
-        "tRNA-Glu-TTC-10-1",
-        "tRNA-Glu-TTC-11-1"
+        "tRNA-Glu-TTC-3-1",
+        "tRNA-Glu-TTC-4-1",
+        "tRNA-Glu-TTC-4-2"
     )
-)
+) %>% mutate(group = "Glu-TTC",
+             func = "Promotes Breast Cancer Metastasis")
 
 sec <- p %>% filter(name %in% c("tRNA-SeC-TCA-1-1",
-                                "tRNA-SeC-TCA-2-1"))
+                                "tRNA-SeC-TCA-2-1")) %>%
+    mutate(group = "SeC",
+           func = "Oxidation (REDOX) & Poor Survival")
 
 ebersole <- p %>% filter(
     name %in% c(
@@ -87,7 +88,8 @@ ebersole <- p %>% filter(
         "tRNA-Asp-GTC-2-5",
         "tRNA-Leu-CAG-1-5"
     )
-)
+) %>% mutate(group = "Ebersole",
+             func = "Chromatin Insulator")
 
 
 
@@ -98,12 +100,17 @@ aloxe <- p %>% filter(
         "tRNA-Leu-TAG-1-1",
         "tRNA-Arg-TCT-2-1"
     )
-)
+) %>% mutate(group = "ALOXE3",
+             func = "Chromatin Insulator")
 
-hes <- p %>% filter(name %in% c("tRNA-Gly-GCC-2-6"))
+hes <- p %>% filter(name %in% c("tRNA-Gly-GCC-2-6")) %>%
+    mutate(group = "HES7",
+           func = "Proximate to ALOXE")
 
 per1 <- p %>% filter(name %in% c("tRNA-Ser-CGA-1-1",
-                                 "tRNA-Thr-AGT-5-1"))
+                                 "tRNA-Thr-AGT-5-1")) %>%
+    mutate(group = "Per1",
+           func = "Chromatin Insulator")
 
 tmem <- p %>% filter(
     name %in% c(
@@ -112,5 +119,9 @@ tmem <- p %>% filter(
         "tRNA-Thr-AGT-1-1",
         "tRNA-Ile-AAT-5-5"
     )
-)
+) %>%
+    mutate(group = "TMEM107",
+           func = "Chromatin Insulator")
+
+save.image(file = "environments/clusters.RData")
 

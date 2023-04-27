@@ -51,7 +51,6 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\usepackage[normalem]{ulem}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -133,7 +132,7 @@
 \begin{center}
 \vspace*{2\baselineskip}
 \Huge
-\textbf{TITLE}\\
+\textbf{FOXA1 Upregulation Correlates With Altered H3K27ac Enrichment in MCF7 Cells}\\
 \vspace*{1\baselineskip}
 \Large{by Natasha Louise Hopkins}\\
 \vspace*{2\baselineskip}
@@ -147,8 +146,8 @@ Prof. Robert J White\\
 17 April, 2023\\
 \vspace*{2\baselineskip}
 \Large{\textbf{Word Count}}\\
-Abstract: \\
-Main: \\
+Abstract: 187\\
+Main: 4034\\
 \vspace*{2\baselineskip}
 \begin{figure}[h!]
 \centering
@@ -169,16 +168,16 @@ Main: \\
 \linespread{2}
 \setlength{\parindent}{0pt}
 \huge
-\textbf{TITLE}\\
+\textbf{FOXA1 Upregulation Correlates With Altered H3K27ac Enrichment in MCF7 Cells}\\
 \normalsize
 \textbf{Natasha L. Hopkins}\\
 
 \setstretch{1.2}
-Abstract
+The Estrogen Receptor alpha (ERα) drives the majority of breast cancers. The presence of ERα is prognostic of positive responses to endocrine therapies. However, up to 50\% of tumours develop resistance to endocrine therapies within 5 years, highlighting the need for new therapeutic targets. The majority of ERα binding events are dependent on FOXA1, a pioneer factor capable of initiating chromatin opening and binding of oncogenic transcription factors. Recently, both ERα and FOXA1 have been shown to bind to tRNA genes, which are often overexpressed in cancers. However, the role of FOXA1 in tRNA transcription has not been determined.Through analysis of publicly available ChIP-seq datasets, it was demonstrated that FOXA1 co-binds with H3K27ac at a large proportion of tDNAs in MCF7 cells. FOXA1 overexpression (OE) in ERα cells drives chromatin activation in a subset of tDNAs, as inferred by H3K27ac. These tDNAs are were enriched in binding motifs for FOXA1, ERE, and ERα tethering proteins, providing evidence for both direct and indirect ERα binding. The evidence presented provides sufficient evidence to permit further investigation into FOXA1 as a driver of tRNA transcription regulation in tamoxifen-resistant cells.
 
 \normalsize
 \begin{flushright}
-1 Words
+187 Words
 \end{flushright}
 \hrulefill\\
 \setlength{\parindent}{10pt}
@@ -186,57 +185,45 @@ Abstract
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\hypertarget{trnas-and-carcinogenesis}{%
-\subsection{tRNAs and Carcinogenesis}\label{trnas-and-carcinogenesis}}
+In 2020, female breast was the most commonly diagnosed cancer worldwide with over 2.2 million cases\textsuperscript{\protect\hyperlink{ref-Sung2021}{1}}.
+Estrogen Receptor (ERα) drives 75\% of breast cancers cancers\textsuperscript{\protect\hyperlink{ref-allred2004}{2}}.
+Presence of ERα is generally prognostic of positive outcomes, due to its use as a therapeutic target.
+Estrogen levels are lowered using endocrine therapies with aromatase inhibitors; fulvestrant, a selective estrogen receptor down regulator (SERD) which binds and degrades the ER, and tamoxifen, a selective estrogen receptor modulator (SERM) which competes with estrogen for binding to ER\textsuperscript{\protect\hyperlink{ref-Johnston2018}{3}}.
+However, resistance to endocrine therapy occurs in 40-50\% of tumours from 5 years of diagnosis\textsuperscript{\protect\hyperlink{ref-Anurag2018}{4}}, highlighting the need for new therapeutic targets.
 
-In Eukaryotes, transcription of DNA is tightly-regulated by three RNA polymerase enzymes.
-RNA Polymerase III (Pol III), the largest of the three at 17-subunits\textsuperscript{\protect\hyperlink{ref-vannini2012}{1}}, produces a series of short non-coding RNAs, including U6 snRNA, 5S rRNA and transfer RNA (tRNA)\textsuperscript{\protect\hyperlink{ref-dieci2007}{2}}.
-Approximately 80\% of Pol III binding resides at tRNAs\textsuperscript{\protect\hyperlink{ref-Raha2010a}{3}} --- adapters required to translate mRNAs into the amino acid protein sequence.
-Initiation of tRNA transcription requires the binding of TFIIIC, a multi-subunit complex, to internal tRNA promoters, the A and B boxes, which are located downstream of the transcription start site\textsuperscript{\protect\hyperlink{ref-Schramm2002}{4}--\protect\hyperlink{ref-Galli1981}{6}}.
-This protein-protein interaction enables the recruitment of the TFIIIB promoter, composed of the TATA-box-binding protein (TBP), BDP1, and BRF1 polypeptides\textsuperscript{\protect\hyperlink{ref-schramm2000}{7}}.
-TFIIIB occupies the region upstream of the transcription start site and binds to Pol III directly through BRF\textsuperscript{\protect\hyperlink{ref-Khoo1994}{8}}, positioning it at the initiation region\textsuperscript{\protect\hyperlink{ref-kassavetis1990}{9}}.
+Early studies demonstrated that Forkhead box A1 (FOXA1) maps to \textasciitilde50\% of ER-chromatin binding sites.
+FOXA1 is a pioneer factor capable of directly initiating chromatin opening, facilitating binding of ERα and other transcription factors to DNA\textsuperscript{\protect\hyperlink{ref-Costa1989}{5}--\protect\hyperlink{ref-laganiuxe8re2005}{8}}.
+Furthermore, silencing of FOXA1 reduces \textasciitilde95\% ER binding events\textsuperscript{\protect\hyperlink{ref-carroll2005}{7},\protect\hyperlink{ref-Hurtado2011}{9}}.
+The presence of FOXA1 determines treatment response in ER+ breast cancer; FOXA1 is associated with positive prognoses following treatment with tamoxifen\textsuperscript{\protect\hyperlink{ref-Hurtado2011}{9},\protect\hyperlink{ref-Badve2007}{10}}.
+However, FOXA1 and ERα has also been found to be overexpressed in some ER+ endocrine resistant breast cancer lines\textsuperscript{\protect\hyperlink{ref-ross-innes2012}{11}}.
+Studies have shown that amplification of FOXA1 promotes endocrine-resistant growth and invasiveness by reprogramming the ER-transcriptome\textsuperscript{\protect\hyperlink{ref-fu2016}{12}}.
 
-Protein synthesis by Pol III dictates cell growth and proliferation\textsuperscript{\protect\hyperlink{ref-Brooks1977}{10}--\protect\hyperlink{ref-Zetterberg1965}{12}}.
-Deregulation of Pol II is associated with a range of cancers\textsuperscript{\protect\hyperlink{ref-Zhang2018}{13},\protect\hyperlink{ref-Pavon-Eternod2009}{14}}, including ovarian and breast\textsuperscript{\protect\hyperlink{ref-Winter2000}{15},\protect\hyperlink{ref-Krishnan2016}{16}}.
-In healthy cells, tumour suppressors such as RB and p52 regulate Pol III transcription.
-This is achieved through binding to TFIIIB, blocking interactions to both TFIIIC and Pol III\textsuperscript{\protect\hyperlink{ref-White1996}{17}--\protect\hyperlink{ref-Crighton2003}{20}}.
+Recently, ERα and FOXA1 have been shown to bind at tRNA genes\textsuperscript{\protect\hyperlink{ref-fu2016}{12},\protect\hyperlink{ref-malcolm2022}{13}}.
+Transfer RNA (tRNA), along with U6 snRNA and 5S rRNA, are products of RNA Polymerase III (Pol III)\textsuperscript{\protect\hyperlink{ref-dieci2007}{14}}.
+In eukaryotes, transcription of DNA is tightly-regulated by three RNA polymerase enzymes.
+Pol III, the largest of the three at 17-subunits\textsuperscript{\protect\hyperlink{ref-vannini2012}{15}}, produces a series of short non-coding RNAs\textsuperscript{\protect\hyperlink{ref-dieci2007}{14}}.
+Approximately 80\% of Pol III binding resides at tRNAs\textsuperscript{\protect\hyperlink{ref-Raha2010a}{16}} --- adapters required to translate mRNAs into the amino acid protein sequence.
+Initiation of tRNA transcription requires the binding of TFIIIC, a multi-subunit complex, to internal tRNA promoters, the A and B boxes, which are located downstream of the transcription start site\textsuperscript{\protect\hyperlink{ref-Schramm2002}{17}--\protect\hyperlink{ref-Galli1981}{19}}.
+This protein-protein interaction enables the recruitment of the TFIIIB promoter, composed of the TATA-box-binding protein (TBP), BDP1, and BRF1 polypeptides\textsuperscript{\protect\hyperlink{ref-schramm2000}{20}}.
+TFIIIB occupies the region upstream of the transcription start site and binds to Pol III directly through BRF\textsuperscript{\protect\hyperlink{ref-Khoo1994}{21}}, positioning it at the initiation region\textsuperscript{\protect\hyperlink{ref-kassavetis1990}{22}}.
+
+Deregulation of Pol III is associated with a range of cancers\textsuperscript{\protect\hyperlink{ref-Zhang2018}{23},\protect\hyperlink{ref-Pavon-Eternod2009}{24}}, including ovarian and breast\textsuperscript{\protect\hyperlink{ref-Winter2000}{25},\protect\hyperlink{ref-Krishnan2016}{26}}.
+In healthy cells, tumour suppressors such as retinoblastoma (RB) and p52 regulate Pol III transcription.
+This is achieved through binding to TFIIIB, blocking interactions to both TFIIIC and Pol III\textsuperscript{\protect\hyperlink{ref-White1996}{27}--\protect\hyperlink{ref-Crighton2003}{30}}.
 Loss of RB and p53 in transformed cells consequently enhances Pol III transcription.
-Contrarily, induction of onco-proteins MAP kinase Erk or c-Myc may stimulate Pol II expression through interactions with TFIIIB\textsuperscript{\protect\hyperlink{ref-Gomez-Roman2003}{21},\protect\hyperlink{ref-Felton-Edkins2003}{22}}.
+Contrarily, induction of onco-proteins MAP kinase Erk or c-Myc may stimulate Pol II expression through interactions with TFIIIB\textsuperscript{\protect\hyperlink{ref-Gomez-Roman2003}{31},\protect\hyperlink{ref-Felton-Edkins2003}{32}}.
 The relationship between Pol III and cell transformation directly implicates tRNAs in carcinogenesis.
-\sout{Tumour cells contain tRNAs that are absent from the normal tissue of origin\textsuperscript{\protect\hyperlink{ref-kuchino1978}{23}}.}
+Specific tRNAs have also been shown to drive cancer progression\textsuperscript{\protect\hyperlink{ref-Goodarzi2016}{33}}.
+For example, overexpression of tRNA-Glu-TTC and tRNA-Arg-CCG has been shown to promote invasion through enhanced stability and up-regulation of metastatic promoters.
+Overexpression of the transcription initiator tRNA-iMet alters global tRNA expression, increasing cell activity and proliferation\textsuperscript{\protect\hyperlink{ref-Pavon-Eternod2013}{34}}, as demonstrated in melanoma cells\textsuperscript{\protect\hyperlink{ref-Birch2016}{35}}.
+Additionally, proteins containing selenocysteine are involved in Redox, which promotes tumour proliferation, linking tRNA-Sec transcription to tumourgenesis\textsuperscript{\protect\hyperlink{ref-Sangha2022}{36}}.
 
-Specific tRNAs have also been shown to drive cancer progression\textsuperscript{\protect\hyperlink{ref-Goodarzi2016}{24}}.
-For instance, overexpression of the transcription initiator tRNA\textsubscript{i}\textsuperscript{Met} alters global tRNA expression, increasing cell activity and proliferation\textsuperscript{\protect\hyperlink{ref-Pavon-Eternod2013}{25}}, as demonstrated in melanoma cells\textsuperscript{\protect\hyperlink{ref-Birch2016}{26}}.
-\sout{Reporter assays revealed that some tRNA genes (tDNAs) act as insulators by restricting spread of heterochromatin\textsuperscript{\protect\hyperlink{ref-raab2011}{27}--\protect\hyperlink{ref-sizer2022}{29}}.}
-
-\hypertarget{er-breast-cancer-and-foxa1}{%
-\subsection{ER+ Breast Cancer and FOXA1}\label{er-breast-cancer-and-foxa1}}
-
-In 2020, female breast was the most commonly diagnosed cancer worldwide with over 2.2 million cases\textsuperscript{\protect\hyperlink{ref-Sung2021}{30}}.
-Estrogen Receptor (ERα) drives 75\% of breast cancers cancers\textsuperscript{\protect\hyperlink{ref-allred2004}{31}}.
-Presence of ERα is generally prognostic of positive outcomes, due to it's use as a therapeutic target.
-Estrogen levels are lowered using endocrine therapies with aromatase inhibitors; fulvestrant, a selective estrogen receptor down regulator (SERD) which binds and degrades the ER, and tamoxifen, a selective estrogen receptor modulator (SERM) which competes with estrogen for binding to ER\textsuperscript{\protect\hyperlink{ref-Johnston2018}{32}}.
-However, resistance to endocrine therapy occurs in 40-50\% of tumours from 5 years of diagnosis\textsuperscript{\protect\hyperlink{ref-Anurag2018}{33}}.
-
-Forkhead box A1 (FOXA1) is a pioneer factor capable of directly initiating chromatin opening, facilitating binding of ERα and other transcription factors\textsuperscript{\protect\hyperlink{ref-Costa1989}{34}--\protect\hyperlink{ref-laganiuxe8re2005}{37}}.
-Early studies demonstrated that FOXA1 maps to \textasciitilde50\% of ER-chromatin binding sites.
-Furthermore, silencing of FOXA1 reduces \textasciitilde95\% ER binding events\textsuperscript{\protect\hyperlink{ref-carroll2005}{36},\protect\hyperlink{ref-Hurtado2011}{38}}.
-
-\sout{FOXA1 is an established growth inhibitor in both ER+ breast cancer cells and ER- cells with forced ER expression\textsuperscript{\protect\hyperlink{ref-Wolf2007}{39}}. Though binding to p27\textsuperscript{kip1}, FOXA1 is also involved in recruiting tumour suppressor BRCA1\textsuperscript{\protect\hyperlink{ref-Williamson2006}{40}--\protect\hyperlink{ref-Fredersdorf1997}{42}}.}
-
-The presence of FOXA1 determines treatment response in ER+ breast cancer; FOXA1 is associated with positive prognoses following treatment with tamoxifen\textsuperscript{\protect\hyperlink{ref-Hurtado2011}{38},\protect\hyperlink{ref-Badve2007}{43}}.
-However, FOXA1 and ERα has also been found to be overexpressed in some ER+ endocrine resistant breast cancer lines\textsuperscript{\protect\hyperlink{ref-ross-innes2012}{44}}.
-Studies have shown that amplification of FOXA1 promotes endocrine-resistant growth and invasiveness by reprogramming the ER-transcriptome\textsuperscript{\protect\hyperlink{ref-Fu2016}{45}}.
-
-Aberrant expression of tRNAs in breast cancers has been observed in several studies\textsuperscript{\protect\hyperlink{ref-Zhang2018}{13},\protect\hyperlink{ref-Pavon-Eternod2009}{14},\protect\hyperlink{ref-Krishnan2016}{16},\protect\hyperlink{ref-Hah2011}{46}}.
-Upon stimulation by estrogen, ERα+ breast cancer cells undergo extensive transcriptional changes, upregulating 90\% of tRNA genes\textsuperscript{\protect\hyperlink{ref-Hah2011}{46}}.
-Additionally, ERα amplifies alcohol-induced deregulation of tRNA\textsuperscript{Leu} by in MCF-7 cells\textsuperscript{\protect\hyperlink{ref-zhong2014}{47}}.
-
+Aberrant expression of tRNAs in breast cancers has been observed in several studies\textsuperscript{\protect\hyperlink{ref-Zhang2018}{23},\protect\hyperlink{ref-Pavon-Eternod2009}{24},\protect\hyperlink{ref-Krishnan2016}{26},\protect\hyperlink{ref-Hah2011}{37}}.
+Upon stimulation by estrogen, ERα+ breast cancer cells undergo extensive transcriptional changes, upregulating 90\% of tRNA genes\textsuperscript{\protect\hyperlink{ref-Hah2011}{37}}.
+Additionally, ERα amplifies alcohol-induced deregulation of tRNA\textsuperscript{Leu} by in MCF-7 cells\textsuperscript{\protect\hyperlink{ref-zhong2014}{38}}.
 As ERα+ BC is reliant on FOXA1, the aim of this study was to determine whether FOXA1 elevates tDNA expression.
-To achieve this, a bioinformatics approach was taken to analyse publicly available FOXA1 and H3K27ac ChIP-seq datasets from Fu et al.~(2019)\textsuperscript{\protect\hyperlink{ref-fu2019}{48}} in the context of the MCF-7 cell line.
+To achieve this, a bioinformatics approach was taken to analyse publicly available FOXA1 and H3K27ac ChIP-seq datasets from Fu et al.~(2019)\textsuperscript{\protect\hyperlink{ref-fu2019}{39}} in the context of the MCF-7 cell line.
 Here, identification of FOXA1 and H3K72ac co-localisation at tDNAs may provide insight into FOXA1's relevance in the altered tRNA expression associated with poor prognosis in ERα+ breast cancer.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{materials-methods}{%
 \section{Materials \& Methods}\label{materials-methods}}
@@ -244,10 +231,10 @@ Here, identification of FOXA1 and H3K72ac co-localisation at tDNAs may provide i
 \hypertarget{chip-seq-data-from-ncbi}{%
 \subsection{ChIP-seq Data from NCBI}\label{chip-seq-data-from-ncbi}}
 
-FOXA1 and H3K27ac ChIP-seq was performed on genetically modified MCF7L cells (\emph{insertion, using a lentiviral cDNA delivery system to express Dox-inducible FOXA1}) by the lab of Xiaoyong Fu, Baylor College of Medicine, and made publicly available on Dec 18 2019\textsuperscript{\protect\hyperlink{ref-fu2019}{48}}.
-Datasets were deposited into the National Centre for Biotechnology Information (NCBI) Sequence Read Archive (SRA) Run Selector\textsuperscript{\protect\hyperlink{ref-leinonen2010}{49}} under the accession number PRJNA513000 (Available at \url{https://www.ncbi.nlm.nih.gov/sra} ; Table \ref{tab:data}).
-Using ``Genetic Manipulation Tools'' within the Galaxy\textsuperscript{\protect\hyperlink{ref-thegala2022}{50}} environment (v 23.0.rc1), SRAs were converted to FastQ files.
-FastQ files were then aligned to the human genome assembly GRCh37 (hg19) by Bowtie2 (v 2.5.0)\textsuperscript{\protect\hyperlink{ref-langmead2012}{51}} to output BAM files.
+FOXA1 and H3K27ac ChIP-seq was performed on genetically modified MCF7L cells (\emph{insertion, using a lentiviral cDNA delivery system to express Dox-inducible FOXA1}) by the lab of Xiaoyong Fu, Baylor College of Medicine, and made publicly available on Dec 18 2019\textsuperscript{\protect\hyperlink{ref-fu2019}{39}}.
+Datasets were deposited into the National Centre for Biotechnology Information (NCBI) Sequence Read Archive (SRA) Run Selector\textsuperscript{\protect\hyperlink{ref-leinonen2010}{40}} under the accession number PRJNA513000 (Available at \url{https://www.ncbi.nlm.nih.gov/sra} ; table \ref{tab:data}).
+Using ``Genetic Manipulation Tools'' within the Galaxy\textsuperscript{\protect\hyperlink{ref-thegala2022}{41}} environment (v 23.0.rc1), SRAs were converted to FastQ files.
+FastQ files were then aligned to the human genome assembly GRCh37 (hg19) by Bowtie2 (v 2.5.0)\textsuperscript{\protect\hyperlink{ref-langmead2012}{42}} to output BAM files.
 
 \begin{longtable}[]{@{}lllll@{}}
 \caption{\label{tab:data}Publicly available ChIP-seq SRA files aquired from the NCBI SRA database (accession no. PRJNA512997).}\tabularnewline
@@ -270,11 +257,11 @@ PRJNA513000 & SRR8393424 & FOXA1 & MCF-7LP & GRCh37 (Hg19) \\
 \end{longtable}
 
 \hypertarget{easeq-for-the-quantification-of-signals-at-tdnas}{%
-\subsubsection{EaSeq for the Quantification of Signals at tDNAs}\label{easeq-for-the-quantification-of-signals-at-tdnas}}
+\subsection{EaSeq for the Quantification of Signals at tDNAs}\label{easeq-for-the-quantification-of-signals-at-tdnas}}
 
 BAM files were uploaded into EaSeq (v1.111) as ``Datasets'' using the standard settings for Chip-seq data.
-GRCh37 (hg19) tRNA sequences (n = 606) were downloaded as a ``Geneset'' from the UCSC Table Browser\textsuperscript{\protect\hyperlink{ref-Karolchik2004}{52}}, (available at \url{https://genome.ucsc.edu}).
-High-confidence tRNAs (n = 416) identified by the GtRNAdb\textsuperscript{\protect\hyperlink{ref-Chan2016}{53}} were extracted as a ``Regionset''.
+GRCh37 (hg19) tRNA sequences (n = 606) were downloaded as a ``Geneset'' from the UCSC Table Browser\textsuperscript{\protect\hyperlink{ref-Karolchik2004}{43}}, (available at \url{https://genome.ucsc.edu}).
+High-confidence tRNAs (n = 416) identified by the GtRNAdb\textsuperscript{\protect\hyperlink{ref-Chan2016}{44}} were extracted as a ``Regionset''; this group tRNAs does not include tRNA-derived repetitive elements and have been determined most likely to be functional in translation.
 
 Signal peak intensities surrounding tRNAs were quantified using the EaSeq ``quantify'' tool.
 Here the default settings ``Normalize to reads per million'' and ``Normalize counts to DNA-fragments'' were left checked.
@@ -289,27 +276,24 @@ The downstream region constitutes the 500 bp region beginning with the first nuc
 The start position was offset to 1 bp, and the end position was offset to 500 bp.
 Following quantification, tRNA binding events were arranged in ascending order of -Dox Q-value and visualised as heatmaps.
 Data was also visualised with the ``heatmap'', ``average'', ``overlay'', and ``fill-track'' tools (Figure \ref{fig:methods}).
-EaSeq\textsuperscript{\protect\hyperlink{ref-lerdrup2016}{54}} is available at \url{http://easeq.net}.
+EaSeq\textsuperscript{\protect\hyperlink{ref-lerdrup2016}{45}} is available at \url{http://easeq.net}.
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth]{../images/methods} \caption{Overview of bioinformatic pipeline. }\label{fig:methods}
+\includegraphics[width=1\linewidth]{../images/methods} \caption{Overview of bioinformatic pipeline for FOXA1 and H3K27ac ChIP-sew analysis at high confidence tRNA genes. ChIP-seq analysis was performed in doxycycline incucible FOXA1 OE MCF-7 cells and analysed in EaSeq. In Galaxy, datasets were aquired from NCBI SRA, aligned to hg19 by Bowtie, and coverted to BAM files. tRNA annotations were obtained from UCSC, and the high convidence tRNAs subset was provided by gtRNAdb. tDNAs were visualised in EaSeq using heatmap, average, and filltrack tools. Figure adapted from Malcolm et al (2022).}\label{fig:methods}
 \end{figure}
 
 \hypertarget{motif-analysis}{%
 \subsection{Motif Analysis}\label{motif-analysis}}
 
-Motif analysis was carried out in active +Dox tDNA genes which had the largest significant increase in FOXA1 or H3K27ac Q-values following ChIP-seq.
-
-!!1!!!!1
-!!!!!!1
-
-Multiple EM for Motif Elicitation ChIP (MEME) Suite
+Motif analysis was carried out by the MEME Suite\textsuperscript{\protect\hyperlink{ref-Bailey2015}{46}} (V 5.5.2; available at: \href{https://meme-suite.org/}{https://meme-suite.org}).
+De Novo motifs were searched via MEME-SEA, and location preference via MEME-CentriMo.
+tDNA sequences and their were acquired from the UCSC Table Browser\textsuperscript{\protect\hyperlink{ref-Navarro2021}{47}} and supplied to the MEME-Suite\textsuperscript{\protect\hyperlink{ref-Bailey2015}{46}}.
+Specific motifs were acquired from JASPAR\textsuperscript{\protect\hyperlink{ref-Castro-Mondragon2022}{48}} and Moqtaderi et al.~(2010)\textsuperscript{\protect\hyperlink{ref-Moqtaderi2010}{49}}.
 
 \hypertarget{statistics}{%
 \subsection{Statistics}\label{statistics}}
 
-Statistical analysis and visualisation was generated with R\textsuperscript{\protect\hyperlink{ref-r}{55}} (v 4.2.3) with the tidyverse\textsuperscript{\protect\hyperlink{ref-wickham2019}{56}} and ggpubr\textsuperscript{\protect\hyperlink{ref-ggpubr}{57}} packages.
-
+Statistical analysis and visualisation was generated with R\textsuperscript{\protect\hyperlink{ref-r}{50}} (v 4.2.3) with the tidyverse\textsuperscript{\protect\hyperlink{ref-wickham2019}{51}} and ggpubr\textsuperscript{\protect\hyperlink{ref-ggpubr}{52}} packages.
 Group differences were determined by Mann-Whitney U, Wilcoxon signed-rank test, and the Chi-squared test.
 
 \hypertarget{chip-seq-and-chip-qpcr}{%
@@ -342,22 +326,18 @@ Real time quantitative PCR (qPCR) was perfomed using the KAPA Library Quantifica
 \hypertarget{localisation-of-foxa1-and-h3k27ac-at-trna-genes-in-mcf-7-cells}{%
 \subsection{Localisation of FOXA1 and H3k27ac at tRNA genes in MCF-7 cells}\label{localisation-of-foxa1-and-h3k27ac-at-trna-genes-in-mcf-7-cells}}
 
-Estrogen stimulates the production of tRNAs\textsuperscript{\protect\hyperlink{ref-Hah2011}{46}}.
-The estrogen receptor is dependent on FOXA1; ChIP-seq analysis has shown that FOXA1 reprograms chromatin in MCF-7 cells\textsuperscript{\protect\hyperlink{ref-fu2016}{58}}.
-To investigate whether FOXA1 enhances tDNA expression, a doxycycline (Dox) inducible OE system in MCF-7 cells was used to achieve FOXA1 OE comparable to endogenous MCF7 tamoxifen-resistant cells (TamR).
-ChIP-seq analysis was carried out for FOXA1 and H3K27ac; open, H3K27ac denotes accessible chromatin and is used to identify active promoters.
+To investigate whether FOXA1 enhances tDNA expression, a Doxycycline (Dox) inducible OE system in MCF-7 cells was used to achieve FOXA1 OE comparable to endogenous MCF7 tamoxifen-resistant cells (TamR).
+ChIP-seq analysis was carried out for FOXA1 and H3K27ac.
+H3K27ac denotes accessible chromatin and is used to identify active promoters, so, H3K27ac signal was used a proxy to measure activity.
 
-It was expected that FOXA1 would alter tDNA activity.
-Mapped reads of FOXA1 and H3K27ac binding was quantified (Q-values) relative to ±500 bp flanking regions.
-Binding events were visualised as heatmaps and ordered by increasing -DOX Q-value.
-This revealed a concentration of FOXA1 and H3k27ac at approximately half of tDNAs, relative to ±10 kb flanking regions.
-
-Upon FOXA1 induction, FOXA1 binding increases at a small proportion of tRNAs genes.
-H3K27ac binding decreases at approximately half of tRNA genes (Figure \ref{fig:results-1}A).
+To explore whether FOXA1 can alter tDNA activity, mapped reads of FOXA1 and H3K27ac binding was quantified (Q-values) relative to ±500 bp flanking regions.
+Binding events were visualised as heatmaps and ordered by increasing -Dox Q-value.
+This revealed a binding signal of FOXA1 and H3K27ac at approximately half of tDNAs, relative to ±10 kb flanking regions.
+Upon FOXA1 induction, FOXA1 enrichment increases at a small proportion of tRNAs genes.
+H3K27ac enrichment decreases at approximately half of tRNA genes (Figure \ref{fig:results-1}A).
 This was confirmed by average signal intensity plots of FOXA1 and H3K27ac binding (Figure \ref{fig:results-1}B).
-Input reads generated minimal peak enrichment (Supplementary Figure X).
-
-FOXA1 density statistically increased in response to FOXA1 induction.
+Input reads generated minimal peak enrichment (Supplementary Figure 1).
+FOXA1 enrichment statistically increased in response to FOXA1 induction.
 Median FOXA1 Q-values were (Figure \ref{fig:results-1}D) increased 10.9\% (p = 0.021).
 For H3K27ac, median Q-values decreased by 1.1\%, however this change was not statistically significant (Figure \ref{fig:results-1}D).
 
@@ -366,258 +346,298 @@ Before FOXA1 OE, FOXA1 interacts with 329 tRNA genes and H3K27ac with 293 tRNA g
 The majority of these events are co-binding, with both FOXA1 and H3K27ac binding to 262 tDNAs.
 Upon FOXA1 OE, the number of FOXA1 binding sites decrease to 319; 40 are lost and 30 are gained, whilst 309 pre-existing sites remained.
 H3K27ac sites also decrease to 266 tDNAs; 50 are lost and 23 are gained, whilst 239 pre-existing sites remained.
-Correspondingly, co-binding events lower to 246; 44 are lost and 28 are gained, whilst 230 pre-existing sites remained.
+Co-binding events lower to 246; 44 are lost and 28 are gained, whilst 230 pre-existing sites remained.
 Together, these results support the notion that FOXA1 and H3K27ac bind to tDNAs.
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth]{../images/results-01} \caption{Comparisons of FOXA1 and H3K27ac binding at tDNAs, with and without Dox.(A) Heatmaps of FOXA1 and H3K27ac across hg19 tRNA genes in MCF-7 cells. Genes arranged in order of increasing -Dox Q-value. Ratiometric heatmaps represent the log2 ratio between -Dox and +Dox peaks. Windows represent ±10kb from the centre of the gene. N = 416. (B) Average signal intensity overlay of FOXA1 and H3K27ac. Windows represent ±10kb from the centre of the gene. (C) Violin plots of FOXA1 and H3K27ac Q-values within ±500bp of the gene body. *p < 0.05.(D) Bar plots of the percentage of cells bound by FOXA1 and H3K27ac. }\label{fig:results-1}
+\includegraphics[width=1\linewidth]{../images/results-01} \caption{Comparisons of FOXA1 and H3K27ac binding at tDNAs, with or without Dox.(A) Heatmaps of FOXA1 and H3K27ac across hg19 tRNA genes in MCF-7 cells. Genes arranged in order of increasing -Dox Q-value. Ratiometric heatmaps represent the log2 ratio between -Dox and +Dox peaks. Windows represent ±10kb from the centre of the gene. N = 416. (B) Average signal intensity overlay of FOXA1 and H3K27ac. Windows represent ±10kb from the centre of the gene. (C) Violin plots of FOXA1 and H3K27ac Q-values within ±500bp of the gene body. *p < 0.05.(D) Bar plots of the percentage of tDNAs bound by FOXA1 and H3K27ac. }\label{fig:results-1}
 \end{figure}
 
-\hypertarget{foxa1-alters-h3k27ac-binding-levels}{%
-\subsection{FOXA1 alters H3K27ac binding levels}\label{foxa1-alters-h3k27ac-binding-levels}}
+\hypertarget{foxa1-overexpression-induces-foxa1-and-h3k27ac-enrichment-at-tdnas}{%
+\subsection{FOXA1 overexpression induces FOXA1 and H3K27ac enrichment at tDNAs}\label{foxa1-overexpression-induces-foxa1-and-h3k27ac-enrichment-at-tdnas}}
 
-To elucidate how FOXA1 impacts tDNA levels, tDNAs that were differently enriched upon FOXA1 OE were categorised as gained (UP) and lost (DN) (fold-change \textgreater{} 1.5, \emph{P}-value \textgreater{} 1e-3).
-This discovered that substantially more tDNAs gained (UP) FOXA1 binding than lost (DN) (96 vs.~62), whilst 258 tDNAs remained relatively unchanged (Figure \ref{fig:results-2}A, left).
-For H3K27ac, 54 tDNAs gained (UP) and 124 lost (DN) H3K27ac (Figure \ref{fig:results-2}A, right), whereas 236 tDNAs remained relatively unchanged.
-As expected, Q-values density was significantly increased or decreased at UP and DN tDNAs, respectively (Figure \ref{fig:results-2}B).
-For FOXA1, median Q-values decreased 42.7\% at DN tDNAs, and increased 90\% at UP tDNAs.
-For H3K27ac, median Q-values decreased 26.4\% at DN tDNAs, and increased 81.5\% at UP tDNAs.
-
-Focusing on UP tDNAs, 95 gain (UP) FOXA1 and 54 gain (UP) H3K27ac (Figure \ref{fig:results-2}C).
-Of this subset (n = 150), 14\% gain both FOXA1 and H3K27ac.
+To elucidate how FOXA1 impacts tDNA levels, tDNAs that were differently enriched upon FOXA1 OE were categorised as having gained (UP) enrichment if fold-change \textgreater{} 1.5 and lost (DN) enrichment if fold-change \textless{} 0.5 (\emph{P}-value \textgreater{} 1e-3).
+This discovered that substantially more tDNAs gained (UP) FOXA1 enrichment than lost (DN) (96 vs.~62), whilst 258 tDNAs remained relatively unchanged (Figure \ref{fig:results-2}A, left).
+Median FOXA1 Q-values decreased by 42.7\% at DN tDNAs, and increased 90\% at UP tDNAs.
+For H3K27ac, FOXA1 OE led to 54 tDNAs gaining (UP) enrichment and 124 losing (DN) enrichment (Figure \ref{fig:results-2}A, right), whereas 236 tDNAs remained relatively unchanged.
+Median H3K27ac Q-values decreased by 26.4\% at DN tDNAs, and increased 81.5\% at UP tDNAs.
+Q-values of both FOXA1 and H3K27ac were significantly increased or decreased at UP and DN tDNAs, respectively (Figure \ref{fig:results-2}B).
+Of tDNAs that significantly gain FOXA1 or H3K27ac (n = 150), 14\% gain both (Figure \ref{fig:results-2}C).
 Examples of exclusive and co-bound tDNAs are shown in Figure \ref{fig:results-2}D.
 
-SUMMARY
-
 \begin{figure}[p]
-\includegraphics[width=1\linewidth]{../images/results-02} \caption{FOXA1 OE impacts binding of FOXA1 and H3K27ac at tRNA genes. (A) Volcano plots of FOXA1 (n = 416) and H3K27ac (n = 414) Q-values in +Dox vs. −Dox cells. (Left) The purple and green dots correspond to the regions with UP and DN FOXA1, respectively. (Right) The orange and green dots correspond to the regions with UP and DN H3K27ac, respectively. The threhold for calling was set fold-change > 1.5 and P < 1e-3. (B) Violin plots of the Q-values of GAIN or LOSS tRNA genes. ****p < 0.0001. (C) Venn diagram representing the overlap between FOXA1 and H3K27ac GAIN regions. (D) Filltrack examples of seperate and co-occuring FOXA1 and H3K27ac GAIN events within ± 2 kb of tDNAs. The black line represents the gene body.}\label{fig:results-2}
+\includegraphics[width=1\linewidth]{../images/results-02} \caption{FOXA1 OE impacts binding of FOXA1 and H3K27ac at tRNA genes. (A) Volcano plots of FOXA1 (n = 416) and H3K27ac (n = 414) Q-values at tDNAs in +Dox vs. −Dox cells. (Left) The purple and green dots correspond to the regions with gained (UP) and lost (DN) FOXA1 enrichment, respectively. (Right) The orange and green dots correspond to the regions with gained (UP) and lost (DN) H3K27ac enrichment, respectively. The threhold for calling was set fold-change > 1.5 and P < 1e-3. (B) Violin plots of the Q-values of gained (UP) or lost (DN) enrichment of H3K37ac or FOXA1 at tRNA genes. ****p < 0.0001. (C) Venn diagram representing the overlap between increased FOXA1 and H3K27ac enrichment regions. (D) Filltrack examples of seperate and co-occuring FOXA1 and H3K27ac enrichment events within ± 2 kb of tDNAs. The black line represents the gene body.}\label{fig:results-2}
 \end{figure}
 
-\hypertarget{tdnas-are-activated-by-foxa1-oe}{%
-\subsection{tDNAs are activated by FOXA1 OE}\label{tdnas-are-activated-by-foxa1-oe}}
+\hypertarget{foxa1-overexpression-activates-tdnas}{%
+\subsection{FOXA1 overexpression activates tDNAs}\label{foxa1-overexpression-activates-tdnas}}
 
 The next step was to investigate the impact of FOXA1 on tDNA activity.
-Almost half of human tDNAs are silent or poorly expressed\textsuperscript{\protect\hyperlink{ref-Torres2019}{59}}.
-Thus, tDNAs were classified as `active' if H3K27ac Q-values exceeded the median -DOX value (Q \textgreater{} 1.808).
-The Q-value density of inactive tDNAs was somewhat altered (p = 0.043), with median FOXA1 Q-values decreasing 4.9\% (Figure \ref{fig:results-3}A).
-The density of active tDNAs did not significantly change, though the median Q-value did decrease 18.9\%.
+Almost half of human tDNAs are silent or poorly expressed\textsuperscript{\protect\hyperlink{ref-Torres2019}{53}}.
+Thus, tDNAs were classified as `active' if H3K27ac Q-values exceeded the median value for non-induced cells, and `inactive' if Q-values were below the median (Median = 1.808).
+The enrichment of H3K27ac at inactive tDNAs was somewhat altered (p = 0.043), with median FOXA1 Q-values decreasing 4.9\% (Figure \ref{fig:results-3}A).
+The enrichment of active tDNAs did not significantly change, though the median Q-value did decrease 18.9\%.
 
-Overexpression of FOXA1 altered the number of active and inactive tDNAs by just 1 (Supplementary Figures X).
-However, 27 tDNAs became inactive (LOSS) and 26 became activate (GAIN), whilst the activity status of 363 (87.3\%) tDNAs remained not changed (NC) (Figure \ref{fig:results-3}B).
-As expected, the Q-value density of activated (GAIN) tDNAs was changed upon FOXA1 OE (Figure \ref{fig:results-3}C).
-Q-values increased 65.4\% for GAIN tDNAs, decreased 14.2\% for LOSS, decreased 8.3\% for NC tDNAs.
-However, these changes were not significant for the last two catagories.
+Upon FOXA1 OE, 27 tDNAs became inactive (LOSS) and 26 became activate (GAIN) (net change = 1) (Supplementary Figure 2).
+Whilst the activity status of 363 (87.3\%) tDNAs remained not changed (NC) (Figure \ref{fig:results-3}B).
+The H3K27ac enrichment of activated (GAIN) tDNAs was significantly increased 65.4\% upon FOXA1 OE (Figure \ref{fig:results-3}C).
+H3K27ac enrichment decreased 14.2\% for inactivated (LOSS) tDNAs, and decreased 8.3\% for no-change (NC) tDNAs.
+However, these changes were not significant for the last two categories.
 
-Superimposing GAIN and LOSS tDNAs with UP and DOWN tDNAs (Figure \ref{fig:results-2}C) revealed that, of the 26 tDNAs that become active upon FOXA1 OE, 19 also reasonably gained H3K27ac (H3K27ac UP), and 13 reasonably gain FOXA1 (FOXA1 UP) (Figure \ref{fig:results-3}D).
-Whereas 16 tDNAs gained both H3K27ac and FOXA1.
-9 activated tDNAs gain (UP) both H3K27ac and FOXA1 binding.
+tDNAs that were activated (GAIN) or inactived (LOSS) by FOXA1 OE were superimposed with tDNAs that significantly gained FOXA1 or H3K27ac enrichment with FOXA1 OE (UP/DN) (Figure \ref{fig:results-2}C).
+This revealed that, of the FOXA1 OE-activated tDNAs, 19 of 26 also reasonably gained H3K27ac enrichment, and 13 of 26 reasonably gained FOXA1 enrichment (Figure \ref{fig:results-3}D).
+Whereas 16 tDNAs gained both H3K27ac and FOXA1 enrichment but not activity.
+Only 9 tDNAs gained activity as well as H3K27ac and FOXA1 enrichment.
 Examples of activated tDNAs with increased H3K27ac, FOXA1, or both, are shown in Figure \ref{fig:results-3}E.
 
-SUMMARY
-
 \begin{figure}[p]
-\includegraphics[width=1\linewidth]{../images/results-03} \caption{(A) Violin plot of H3K27ac Q-values within ±500bp of the gene body of inactive and active tDNAs. *p < 0.05. (B) Barplot of tDNAs catagorised by activity change upon FOXA1 OE. tDNAs are classed as inactivated (LOSS), no-change (NC), and activated(GAIN). (C) Violin plot of tDNA Q-values, catagorised as they are in B. *p < 0.05, **p < 0.01. (D) Venn diagram representing the overlap between tDNAs classed as GAIN and UP. (E). Filltrack examples of co-occuring FOXA1 UP and H3K27ac GAIN events within ± 2 kb of tDNAs. The black line represents the gene body.}\label{fig:results-3}
+\includegraphics[width=1\linewidth]{../images/results-03} \caption{(A) Violin plot of H3K27ac Q-values within ±500bp of the gene body of inactive and active tDNAs. *p < 0.05. (B) Barplot of tDNAs catagorised by activity change upon FOXA1 OE. tDNAs are classed as inactivated (LOSS), no-change (NC), and activated (GAIN). (C) Violin plot of tDNA Q-values, catagorised as they are in B. *p < 0.05, **p < 0.01. (D) Venn diagram representing the overlap between tDNAs classed as activated (GAIN) or enriched in FOXA1 or H3K27ac (UP) upon FOXA1 OE. (E). Filltrack examples of co-occuring FOXA1 enrichment (UP), H3K27ac enrichment (UP), and activation (GAIN) events within ± 2 kb of tDNAs. The black line represents the gene body.}\label{fig:results-3}
 \end{figure}
 
-\hypertarget{foxa1-oe-influences-the-binding-location-of-foxa1-and-h3k27ac}{%
-\subsection{FOXA1 OE influences the binding location of FOXA1 and H3K27ac}\label{foxa1-oe-influences-the-binding-location-of-foxa1-and-h3k27ac}}
+\hypertarget{binding-of-foxa1-downstream-correlates-to-h3k27ac-binding-upstream}{%
+\subsection{Binding of FOXA1 downstream correlates to H3K27ac binding upstream}\label{binding-of-foxa1-downstream-correlates-to-h3k27ac-binding-upstream}}
 
-To assess FOXA1 and H3K27ac binding preference, the levels of FOXA1 and H3K27ac at upstream and downstream regions was quantified within a ± 500 bp (Figure \ref{fig:results-4}A).
-The upstream window was classified as the 500 bp region preceding the tDNA loci, including the the TSS.
+To assess FOXA1 and H3K27ac binding preference, the levels of FOXA1 and H3K27ac at upstream and downstream regions were quantified within a ± 500 bp (Figure \ref{fig:results-4}A).
+The upstream window was classified as the 500 bp region preceding the tDNA loci, including the TSS.
 In contrast, the 500 bp region preceding the TSS defined the downstream region.
-
-FOXA1 was found to be bound at more downstream sites than upstream sites, both with FOXA1 OE and without (-DOX 307 vs 319; +Dox 297 vs 331) (Figure \ref{fig:results-4}B) .
-However, FOXA1 did not significantly change the number of FOXA1 bound DNAs upstream or downstream (Figure \ref{fig:results-4}C).
-On the other hand, significantly more H3K27ac binding events occured downstream (-DOX 284 vs 280; +Dox 276 vs 240) (Figure \ref{fig:results-4}B).
-This pattern of H3K27ac binding was further perpetuated by FOXA1 OE; Q-values significantly decreased 3.8\%\% upstream and 14.3\% downstream (Figure \ref{fig:results-4}C).
+When comparing site location, FOXA1 was found to bind at more tDNAs at downstream sites than upstream sites, both with FOXA1 OE and without (307 vs 319; 297 vs 331) (Figure \ref{fig:results-4}B).
+FOXA1 OE decreased the number of binding sites upstream (307 vs 297), and increased the number of binding sites downstream (319 vs 331) , though this was not significant (Figure \ref{fig:results-4}C).
+Contrarily, H3K27ac bound at significantly more tDNAs upstream sites than downstream, both with FOXA1 OE and without (-Dox 284 vs 280; +Dox 276 vs 240) (Figure \ref{fig:results-4}B).
+This pattern of binding was further perpetuated by FOXA1 OE; Q-values significantly decreased 3.8\%\% upstream and 14.3\% downstream (Figure \ref{fig:results-4}C).
 
 \begin{figure}[p]
 \includegraphics[width=1\linewidth]{../images/results-04} \caption{(A) Schematic of the independent quantification of the upstream and downstream regions of tDNAs. Windows were confined to the ±500 bp, including the gene body. Binding events were counted if Q-values exceeded the input values. (B) Violin plot of the upstream and downstream Q-values for FOXA1 and H3K27ac, with or without Dox. (C)}\label{fig:results-4}
 \end{figure}
 
-\hypertarget{motif-analysis-1}{%
-\subsection{Motif Analysis}\label{motif-analysis-1}}
+\hypertarget{foxa1-and-ere-motifs-are-present-at-activated-tdnas}{%
+\subsection{FOXA1 and ERE motifs are present at activated tDNAs}\label{foxa1-and-ere-motifs-are-present-at-activated-tdnas}}
 
-\hypertarget{why}{%
-\paragraph{Why?}\label{why}}
-
-\hypertarget{what}{%
-\subsubsection{What?}\label{what}}
-
-\begin{itemize}
-\item
-  MEME SEA of GAIN UP UP tDNAs (n = 9)
-\item
-  27 de novo identified
-\item
-  A and B box motifs as a control
-\item
-  p-values
-\item
-  mention AR motif also enriches/ any other established fox interactions
-\end{itemize}
-
-\hypertarget{suggests}{%
-\paragraph{Suggests?}\label{suggests}}
+Motif analysis was conducted to investigate the binding mechanism directing FOXA1 to tRNA genes (Figure \ref{fig:results-5}A).
+The subset included tDNAs that, upon FOXA1 OE, significantly gained FOXA1 enrichment (FOXA1 UP), H3K27ac enrichment (H3K27ac UP), and gained activity (GAIN) (n = 9).
+Investigation of \emph{De Novo} motifs at these tDNAs revealed 27 enriched motifs, relative to random control sequences.
+Top binders included MITF, SP2, TAF1, and SP1.
+Interestingly, the androgen receptor (AR) was also discovered in this subset.
+A specific search found FOXA1 (8 of 9), ERE (7 of 9), AP1 fos::jun (4 of 9), and SP1 (9 of 9) motifs to be enriched.
+However, no motifs were discovered to be enriched at particular locations (data not shown).
+The searches included the ±500 bp up- and downstream regions of tDNAs.
+Test functionality was confirmed by enrichment of the conserved A box at all genes in this subset (Supplementary 3).
 
 \begin{figure}[p]
-\includegraphics[width=1\linewidth]{../images/results-05} \end{figure}
+\includegraphics[width=1\linewidth]{../images/results-05} \caption{FOXA1 and ERE bindings motifs are located at tDNAs (A) Schematic of the motif enrichment analysis process carried out in MEME Suite.(B) The most highly enriched de novo motifs identified by MEME-SEA. (C) The enrichment of specific de novo motifs.}\label{fig:results-5}
+\end{figure}
 
-\hypertarget{figure-5}{%
-\subsection{Figure 5}\label{figure-5}}
+\hypertarget{foxa1-overexpression-at-cancer-implicated-tdnas}{%
+\subsection{FOXA1 overexpression at cancer implicated tDNAs}\label{foxa1-overexpression-at-cancer-implicated-tdnas}}
 
-\begin{itemize}
-\tightlist
-\item
-  Localisation of FOXA1 at individual tDNA genes in MCF-7 cells
-\item
-  why - tRNAs implicated in cancer
-\item
-  Largely unchanged
-\item
-  mention exceptions
-\item
-  examples of NC, UP, DOWN or 1 example from each family/cluster?
-\end{itemize}
+The influence of FOXA1 OE on cancer-implicated tRNAs was analysed.
+This included the iMet\textsuperscript{\protect\hyperlink{ref-Pavon-Eternod2013}{34},\protect\hyperlink{ref-Wang2018}{54}}, Met, Arg-CCG\textsuperscript{\protect\hyperlink{ref-Goodarzi2016}{33}}, Gly-TTC\textsuperscript{\protect\hyperlink{ref-Goodarzi2016}{33}}, and Sec-TCA\textsuperscript{\protect\hyperlink{ref-Sangha2022}{36}} families; the ALOXE3\textsuperscript{\protect\hyperlink{ref-sizer2022}{55}}, TMEM\textsuperscript{\protect\hyperlink{ref-sizer2022}{55}}, Per1\textsuperscript{\protect\hyperlink{ref-raab2011}{56}}, and Ebersole\textsuperscript{\protect\hyperlink{ref-sizer2022}{55},\protect\hyperlink{ref-Ebersole2011}{57}} clusters; and the Hes7\textsuperscript{\protect\hyperlink{ref-raab2011}{56}}tRNA.
+These tDNAs and their speculated functions are outlined in Table \ref{tab:clusters}.
+In this selection of tRNAs, FOXA1 OE altered the activity of only a few genes.
+Activity was gained at 5 tDNAs; two belong to the Glu-TTC family, another two to the Ebersole cluster, and one to the MET family (Table \ref{tab:clusters}).
+On the other hand, activity was lost at 3 tDNAs, belonging to the Met and Glu-TTC families, and the ALOXE3 cluster.
+Both FOXA1 and H3K27ac enrichment increased at 12 tDNAs.
+However, this was only significant at tRNA-Glu-TTC-4-1, tRNA-iMet-CAT-1-6, and tRNA-Met-CAT-3-1 (Fold-change \textgreater1.5).
+These results imply that FOXA1 OE does not modify activity at the majority of these tDNAs.
 
-Suggests?
+\begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0849}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.3491}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1698}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1132}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1226}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0849}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0755}}@{}}
-\caption{\label{tab:clusters}.}\tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Function
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-tRNAs
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-ed\_activity
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-dox\_activity
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-fox\_fold
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-h3\_fold
-\end{minipage} \\
-\midrule()
+\begin{longtable}[t]{lllllrr}
+\caption{\label{tab:clusters}FOXA1 OE did not significantly alter tDNAs with implications in cancer development.}\\
+\toprule
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Activity} & \multicolumn{2}{c}{Fold-Change} \\
+\cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+Group & Function & tRNAs & -Dox & +Dox & FOXA1 & H2K27ac\\
+\midrule
 \endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Family
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Function
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-tRNAs
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-ed\_activity
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-dox\_activity
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-fox\_fold
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-h3\_fold
-\end{minipage} \\
-\midrule()
+\caption[]{\label{tab:clusters}FOXA1 OE did not significantly alter tDNAs with implications in cancer development. \textit{(continued)}}\\
+\toprule
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Activity} & \multicolumn{2}{c}{Fold-Change} \\
+\cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+Group & Function & tRNAs & -Dox & +Dox & FOXA1 & H2K27ac\\
+\midrule
 \endhead
-ALOXE & Insulator\textsuperscript{\protect\hyperlink{ref-raab2011}{27},\protect\hyperlink{ref-sizer2022}{29}} & tRNA-Lys-TTT-3-5 & Active & 1 & 1.58 & 0.76 \\
-& & tRNA-Gln-CTG-1-5 & Inactive & 0 & 1.73 & 0.80 \\
-& & tRNA-Leu-TAG-1-1 & Active & 1 & 1.56 & 1.04 \\
-& & tRNA-Arg-TCT-2-1 & Active & 1 & 1.29 & 1.15 \\
-Ebersole & Insulator\textsuperscript{\protect\hyperlink{ref-Ebersole2011}{28},\protect\hyperlink{ref-sizer2022}{29}} & tRNA-Glu-CTC-1-5 & Active & 1 & 0.92 & 1.01 \\
-& & tRNA-Gly-TCC-2-5 & Active & 1 & 0.94 & 1.27 \\
-& & tRNA-Asp-GTC-2-5 & Active & 1 & 0.86 & 1.58 \\
-& & tRNA-Leu-CAG-1-5 & Inactive & 0 & 0.67 & 1.03 \\
-HES7 & Proximate to ALOXE & tRNA-Gly-GCC-2-6 & Active & 1 & 1.17 & 0.86 \\
-Per1 & Per1 & tRNA-Ser-CGA-1-1 & Active & 1 & 1.44 & 1.05 \\
-& & tRNA-Thr-AGT-5-1 & Active & 1 & 1.39 & 0.99 \\
-TMEM107 & Insulator\textsuperscript{\protect\hyperlink{ref-raab2011}{27},\protect\hyperlink{ref-sizer2022}{29}} & tRNA-Trp-CCA-3-3 & Active & 1 & 1.11 & 0.72 \\
-& & tRNA-Ser-GCT-4-3 & Active & 1 & 1.10 & 0.66 \\
-& & tRNA-Thr-AGT-1-1 & Active & 1 & 1.25 & 0.74 \\
-& & tRNA-Ile-AAT-5-5 & Active & 1 & 1.16 & 0.83 \\
-Arg-CCG & Cancer Progression\textsuperscript{\protect\hyperlink{ref-Goodarzi2016}{24}} & tRNA-Arg-CCG-1-1 & Inactive & 0 & 1.85 & 0.26 \\
-& & tRNA-Arg-CCG-1-2 & Inactive & 0 & 0.57 & 0.49 \\
-& & tRNA-Arg-CCG-1-3 & Active & 1 & 0.84 & 0.66 \\
-& & tRNA-Arg-CCG-2-1 & Active & 1 & 0.88 & 0.32 \\
-Glu-TTC & Cancer Progression\textsuperscript{\protect\hyperlink{ref-Goodarzi2016}{24}} & tRNA-Glu-TTC-1-1 & Inactive & 0 & 1.13 & 0.74 \\
-& & tRNA-Glu-TTC-1-2 & Active & 1 & 0.87 & 0.98 \\
-& & tRNA-Glu-TTC-2-1 & Active & 1 & 1.16 & 0.93 \\
-& & tRNA-Glu-TTC-2-2 & Active & 1 & 1.55 & 0.94 \\
-& & tRNA-Glu-TTC-4-2 & Inactive & 0 & 1.06 & 0.76 \\
-iMET & Translation Initiation & tRNA-iMet-CAT-1-1 & Active & 1 & 1.39 & 0.72 \\
-& & tRNA-iMet-CAT-1-2 & Active & 1 & 1.01 & 0.55 \\
-& & tRNA-iMet-CAT-1-3 & Active & 1 & 1.18 & 0.84 \\
-& & tRNA-iMet-CAT-1-4 & Inactive & 0 & 1.26 & 0.52 \\
-& & tRNA-iMet-CAT-1-5 & Inactive & 0 & 2.29 & 1.12 \\
-& & tRNA-iMet-CAT-1-6 & Inactive & 0 & 1.71 & 1.73 \\
-& & tRNA-iMet-CAT-1-7 & Active & 1 & 1.29 & 0.63 \\
-& & tRNA-iMet-CAT-1-8 & Active & 1 & 1.40 & 0.75 \\
-& & tRNA-iMet-CAT-2-1 & Inactive & 0 & 1.38 & 1.35 \\
-Met & iMet Control & tRNA-Met-CAT-1-1 & Inactive & 0 & 1.90 & 0.99 \\
-& & tRNA-Met-CAT-2-1 & Inactive & 0 & 0.59 & 1.32 \\
-& & tRNA-Met-CAT-3-1 & Active & 1 & 4.26 & 2.06 \\
-& & tRNA-Met-CAT-3-2 & Inactive & 0 & 1.24 & 0.24 \\
-& & tRNA-Met-CAT-4-1 & Inactive & 0 & 1.30 & 1.26 \\
-& & tRNA-Met-CAT-4-2 & Inactive & 0 & 0.74 & 1.27 \\
-& & tRNA-Met-CAT-4-3 & Active & 1 & 1.46 & 1.55 \\
-& & tRNA-Met-CAT-5-1 & Inactive & 0 & 0.48 & 1.17 \\
-& & tRNA-Met-CAT-6-1 & Active & 1 & 1.07 & 0.79 \\
-& & tRNA-Met-CAT-7-1 & Inactive & 0 & 0.85 & 0.65 \\
-SeC & REDOX\textsuperscript{\protect\hyperlink{ref-Sangha2022}{60}} & tRNA-SeC-TCA-1-1 & Active & 1 & 0.54 & 0.39 \\
-& & tRNA-SeC-TCA-2-1 & Inactive & 0 & 1.38 & 1.92 \\
-\bottomrule()
+
+\endfoot
+\bottomrule
+\endlastfoot
+ & tRNA-Arg-TCT-2-1 &  & Active & Active & 1.29 & 1.15\\
+\nopagebreak
+ & tRNA-Gln-CTG-1-5 &  & Active & Inactive & 1.73 & 0.80\\
+\nopagebreak
+ & tRNA-Leu-TAG-1-1 &  & Active & Active & 1.56 & 1.04\\
+\nopagebreak
+\multirow[t]{-4}{*}{\raggedright\arraybackslash ALOXE3} & tRNA-Lys-TTT-3-5 & \multirow[t]{-4}{*}{\raggedright\arraybackslash Chromatin Insulator} & Active & Active & 1.58 & 0.76\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-Asp-GTC-2-5 &  & Inactive & Active & 0.86 & 1.58\\
+\nopagebreak
+ & tRNA-Glu-CTC-1-5 &  & Inactive & Active & 0.92 & 1.01\\
+\nopagebreak
+ & tRNA-Gly-TCC-2-5 &  & Active & Active & 0.94 & 1.27\\
+\nopagebreak
+\multirow[t]{-4}{*}{\raggedright\arraybackslash Ebersole} & tRNA-Leu-CAG-1-5 & \multirow[t]{-4}{*}{\raggedright\arraybackslash Chromatin Insulator} & Inactive & Inactive & 0.67 & 1.03\\
+\cmidrule{1-7}\pagebreak[0]
+HES7 & tRNA-Gly-GCC-2-6 & Proximate to ALOXE & Active & Active & 1.17 & 0.86\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-Ser-CGA-1-1 &  & Active & Active & 1.44 & 1.05\\
+\nopagebreak
+\multirow[t]{-2}{*}{\raggedright\arraybackslash Per1} & tRNA-Thr-AGT-5-1 & \multirow[t]{-2}{*}{\raggedright\arraybackslash Chromatin Insulator} & Active & Active & 1.39 & 0.99\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-Ile-AAT-5-5 &  & Active & Active & 1.16 & 0.83\\
+\nopagebreak
+ & tRNA-Ser-GCT-4-3 &  & Active & Active & 1.10 & 0.66\\
+\nopagebreak
+ & tRNA-Thr-AGT-1-1 &  & Active & Active & 1.25 & 0.74\\
+\nopagebreak
+\multirow[t]{-4}{*}{\raggedright\arraybackslash TMEM107} & tRNA-Trp-CCA-3-3 & \multirow[t]{-4}{*}{\raggedright\arraybackslash Chromatin Insulator} & Active & Active & 1.11 & 0.72\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-Arg-CCG-1-1 &  & Inactive & Inactive & 1.85 & 0.26\\
+\nopagebreak
+ & tRNA-Arg-CCG-1-2 &  & Inactive & Inactive & 0.57 & 0.49\\
+\nopagebreak
+ & tRNA-Arg-CCG-1-3 &  & Active & Active & 0.84 & 0.66\\
+\nopagebreak
+\multirow[t]{-4}{*}{\raggedright\arraybackslash Arg-CCG} & tRNA-Arg-CCG-2-1 & \multirow[t]{-4}{*}{\raggedright\arraybackslash Promotes Breast Cancer Metastasis} & Active & Active & 0.88 & 0.32\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-Glu-TTC-1-1 &  & Active & Inactive & 1.13 & 0.74\\
+\nopagebreak
+ & tRNA-Glu-TTC-1-2 &  & Active & Active & 0.87 & 0.98\\
+\nopagebreak
+ & tRNA-Glu-TTC-2-1 &  & Active & Active & 1.16 & 0.93\\
+\nopagebreak
+ & tRNA-Glu-TTC-2-2 &  & Active & Active & 1.55 & 0.94\\
+\nopagebreak
+ & tRNA-Glu-TTC-3-1 &  & Inactive & Active & 1.12 & 1.68\\
+\nopagebreak
+ & tRNA-Glu-TTC-4-1 &  & Inactive & Active & 1.80 & 2.37\\
+\nopagebreak
+\multirow[t]{-7}{*}{\raggedright\arraybackslash Glu-TTC} & tRNA-Glu-TTC-4-2 & \multirow[t]{-7}{*}{\raggedright\arraybackslash Promotes Breast Cancer Metastasis} & Inactive & Inactive & 1.06 & 0.76\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-iMet-CAT-1-1 &  & Active & Active & 1.39 & 0.72\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-2 &  & Active & Active & 1.01 & 0.55\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-3 &  & Active & Active & 1.18 & 0.84\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-4 &  & Inactive & Inactive & 1.26 & 0.52\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-5 &  & Inactive & Inactive & 2.29 & 1.12\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-6 &  & Inactive & Inactive & 1.71 & 1.73\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-7 &  & Active & Active & 1.29 & 0.63\\
+\nopagebreak
+ & tRNA-iMet-CAT-1-8 &  & Active & Active & 1.40 & 0.75\\
+\nopagebreak
+\multirow[t]{-9}{*}{\raggedright\arraybackslash iMET} & tRNA-iMet-CAT-2-1 & \multirow[t]{-9}{*}{\raggedright\arraybackslash Transcription Initiation} & Inactive & Inactive & 1.38 & 1.35\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-Met-CAT-1-1 &  & Inactive & Inactive & 1.90 & 0.99\\
+\nopagebreak
+ & tRNA-Met-CAT-2-1 &  & Inactive & Inactive & 0.59 & 1.32\\
+\nopagebreak
+ & tRNA-Met-CAT-3-1 &  & Active & Active & 4.26 & 2.06\\
+\nopagebreak
+ & tRNA-Met-CAT-3-2 &  & Active & Inactive & 1.24 & 0.24\\
+\nopagebreak
+ & tRNA-Met-CAT-4-1 &  & Inactive & Inactive & 1.30 & 1.26\\
+\nopagebreak
+ & tRNA-Met-CAT-4-2 &  & Inactive & Inactive & 0.74 & 1.27\\
+\nopagebreak
+ & tRNA-Met-CAT-4-3 &  & Inactive & Active & 1.46 & 1.55\\
+\nopagebreak
+ & tRNA-Met-CAT-5-1 &  & Inactive & Inactive & 0.48 & 1.17\\
+\nopagebreak
+ & tRNA-Met-CAT-6-1 &  & Active & Active & 1.07 & 0.79\\
+\nopagebreak
+\multirow[t]{-10}{*}{\raggedright\arraybackslash MET} & tRNA-Met-CAT-7-1 & \multirow[t]{-10}{*}{\raggedright\arraybackslash iMET Control} & Inactive & Inactive & 0.85 & 0.65\\
+\cmidrule{1-7}\pagebreak[0]
+ & tRNA-SeC-TCA-1-1 &  & Active & Active & 0.54 & 0.39\\
+\nopagebreak
+\multirow[t]{-2}{*}{\raggedright\arraybackslash SeC} & tRNA-SeC-TCA-2-1 & \multirow[t]{-2}{*}{\raggedright\arraybackslash Oxidation (REDOX) \& Poor Survival} & Inactive & Inactive & 1.38 & 1.92\\*
 \end{longtable}
+\endgroup{}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-\begin{itemize}
-\item
-  fox binding upstream = h3k27ac binding downstream
+In MCF-7 cells, tRNAs are extensively upregulated by the expression of estrogen\textsuperscript{\protect\hyperlink{ref-Hah2011}{37}}.
+The function of the estrogen receptor (ERα) is dependent on FOXA1\textsuperscript{\protect\hyperlink{ref-carroll2005}{7},\protect\hyperlink{ref-laganiuxe8re2005}{8}}, however, a relationship between FOXA1 and tRNAs has not yet been established.
+The aim of this project was to determine whether FOXA1 increases the activation of tRNA genes, as inferred by H3K27ac.
+This analysis of ChIP-seq datasets provides evidence that over-expression of FOXA1 regulates tRNA gene activation; revealing a subset of tDNAs which significantly gain FOXA1 and H3K27ac upon FOXA1 OE, whilst also shifting from an inactive to active chromatin state.
 
-  \begin{itemize}
-  \item
-    briefly reiterate results
-  \item
-    binding intensity decreases
-  \end{itemize}
-\item
-  Loses fox = weak binding?
-\item
-  explain input peak
-\item
-  Dynamic vs stable marks
-\item
-  motifs interaction with ERa
-\item
-  foxa1 looping
-\end{itemize}
+\hypertarget{foxa1-oe-reprograms-foxa1-and-h3k27ac-binding-at-trnas-genes}{%
+\subsection{FOXA1 OE reprograms FOXA1 and H3K27ac binding at tRNAs genes}\label{foxa1-oe-reprograms-foxa1-and-h3k27ac-binding-at-trnas-genes}}
 
-Future -
+FOXA1 and H3K27ac was found at the majority of tDNAs.
+Generally, FOXA1 OE decreased the number of FOXA1- and H3K27ac-binding events at tDNAs.
+FOXA1 binding coincided with the approximately 60\% of H3K27ac marks, slightly decreasing with FOXA1 OE (Figure \ref{fig:results-1}).
+Considerably more tDNAs gained than lost FOXA1 enrichment, with 15\% losing and 23\% gaining a significant amount of FOXA1.
+The difference between gained and lost H3K27ac enrichment was more extensive.
+Sufficient gain of H3K27ac enrichment constituted to 13\% of tDNAs, whilst loss of H3K27ac was observed at 30\%.
+These results were unanticipated, as FOXA1 OE corresponds to an increase in H3K27ac in protein coding genes\textsuperscript{\protect\hyperlink{ref-Cirillo2002}{6}}.
+However, it is noteworthy that tDNAs which gain H3K27ac enrichment do so at a higher magnitude than those that lose H3K27ac (Figure \ref{fig:results-3}B).
+Only 25 (6\%) tDNAs experienced a compelling increase in both FOXA1 and H3K27ac binding intensity upon FOXA1 OE (Figure \ref{fig:results-3}C).
+This was an abrupt finding, as ChIP-Seq analysis by Fu et al.~(2016)\textsuperscript{\protect\hyperlink{ref-fu2016}{12}} found that increased FOXA1 intensity corresponds to an increase in H3K27ac intensity at 15\% of events.
+Though, this disparity in results is likely due to the difference in gene subsets, as this study focuses enhancer genes.
 
-\begin{itemize}
-\item
-  ATAC-seq
-\item
-  h3kme3 along with h3k27ac
-\item
-  look at DN tdnas
-\end{itemize}
+Of these tDNAs, 9 changed from an inactive to active state (Figure \ref{fig:results-4}D).
+On average, FOXA1 OE inactivated tDNAs with high levels of H3K27ac, whereas tDNAs with low H3K27ac levels were activated (Figure \ref{fig:results-4}C).
+Since fold-change was as used determine a significant change in binding enrichment, this may explain why larger increases are seen for increased H3K27ac.
+Approximately 50\% of tRNAs are silenced or poorly expressed\textsuperscript{\protect\hyperlink{ref-Torres2019}{53}}.
+Therefore, the median H3K27ac Q-value of non-induced tDNAs was chosen as the threshold for determining activity.
+However, H3K27ac binding alone is not sufficient for the identification of open chromatin{[}\textsuperscript{\protect\hyperlink{ref-Creyghton2010}{58}};{]}, nor is it confirmation of tRNA transcription.
+So, the impact of FOXA1 on tDNA activation identified in this study remains unresolved.
+The affect of FOXA1 on chromatin accessibility would be better established by ATAC-seq, which has previously been demonstrated in prostate cancer\textsuperscript{\protect\hyperlink{ref-Adams2019}{59}}.
+Implementing a ChIP-qPCR of Pol III would also provide clearer insight of FOXA1-induced tDNA transcription, whilst a qPCR of tRNA expression would identify tDNAs that are highly induced by FOXA1.
+
+FOXA1 was observed to preferentially bind downstream, whilst more H3K27ac binding events occurred upstream (Figure \ref{fig:results-5}B).
+This pattern of H3K27ac binding was further perpetuated by FOXA1 OE, with H3K27ac decreasing downstream (Figure \ref{fig:results-5}C).
+However, FOXA1 binding preference was not changed by FOXA1 OE. It is not known why FOXA1 would bind distinctly to H3K27ac marks, though FOXA1 OE may recruits histone acetyltransferases upstream of FOXA1 binding.
+
+The binding of FOXA1 and H3K27ac was analysed in several groups of tRNAs involved in cancer development.
+Overexpression of FOXA1 did not significantly alter FOXA1 or H3K27ac binding at the majority of these tDNAs.
+Only 3 activated tDNAs experienced a significant increase in both FOXA1 and H3K27ac enrichment.
+Approximately 50\% of these tRNA genes are active before induction of FOXA1 OE ---~though evidence does not point towards contribution to a tamoxifen-resistant phenotype, their activity in MCF7 cells warrants further investigation.
+
+\hypertarget{motifs-to-mechanisms}{%
+\subsection{Motifs to Mechanisms}\label{motifs-to-mechanisms}}
+
+To elucidate how FOXA1 binds to tRNAs, enrichment analysis was carried out on the 9 activated tDNAs which significantly gain FOXA1 and H3K27ac.
+ERα relies upon FOXA1\textsuperscript{\protect\hyperlink{ref-carroll2005}{7}}; ERE motifs have recently been established at tRNA genes in ERα breast cancer\textsuperscript{\protect\hyperlink{ref-malcolm2022}{13}}, yet the presence of the forkhead motif has remained unresolved.
+Numerous \emph{de novo} motifs were identified, many of which are transcription factors.
+Top binders including MITF, SP2, and TAF1 --- investigation is warranted to establish a relationship between these binders with tRNAs.
+Interestingly, the binding motif of the Androgen Receptor (AR) was also identified at 5 of 9 tDNAs.
+The AR drives prostate cancer, which is also promoted by FOXA1 OE\textsuperscript{\protect\hyperlink{ref-gerhardt2012}{60}}.
+
+Specific motif analysis was carried out to identify FOXA1 motifs, followed by ERα and ERα tethering proteins, AP1 (fos::jun) and SP1.
+FOXA1 motifs were present in 8 of 9 tDNAs, with the exception of tRNA-Glu-TTC-4-1.
+Interestingly, the 7 ERE motifs identified in this subset were only located at tDNAs which contained a FOXA1 motif.
+ERα tethering proteins AP1 (fos::jun) and SP1 were also found at 4 of 9 and 9 or 9 tDNAs, respectively.
+This discovery introduces anew possibility of ERα binding to tDNAs, both directly and indirectly via AP1 and SP1, which may explain why many tRNAs are bound by ERα whilst lacking an ERE motif\textsuperscript{\protect\hyperlink{ref-malcolm2022}{13}}.
+Another possibility includes distal binding though chromatin looping, which can occur from up to 1Mb from the TSS\textsuperscript{\protect\hyperlink{ref-fullwood2009}{61}}, though this has not yet been demonstrated in tDNAs.
+This could explain why tRNA-Glu-TTC-4-1 and tRNA-Ser-CGA-3-1 lack an ERE motifs, though this likely due to such a narrow tDNA windows (±500).
+This project did not address the role of FOXA1 in ERα --- analysing ERα binding at FOXA1 induced tDNAs is of utmost importance in establishing a role in tamoxifen-resitance.This too could be addressed by ChIP-seq.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
+Through the interrogation of publicly available ChIP-seq datasets, a novel relationship between FOXA1 OE and H3K27ac binding at tRNA genes has been determined.
+Binding of FOXA1 at tDNAs correlates with an overall decrease in H3K27ac enrichment.
+However, FOXA1 OE activated tDNAs with significant gain in FOXA1 and H3K27ac enrichment were also identified.
+This subset is enriched in binding motifs of FOXA1 and ERE; both FOXA1 and ERα have the capacity to directly bind to tDNAs, though the presence of ER-tethering proteins AP1 and SP1 introduce potential for ERα distal binding.
+Due to the limitations of using H3K27ac as a predictor of tDNA activation, the consequences of FOXA1 OE on tDNA activity remains undetermined.
+Nonetheless, the FOXA1 and H3K27ac modifications induced by FOXA1 OE are adequate evidence to permit further investigation into FOXA1 as a driver of tRNA transcription regulation in tamoxifen-resistant cells.
+
+\hypertarget{acknowledgements}{%
+\section{Acknowledgements}\label{acknowledgements}}
+
+I would like to express my thanks to my project director, Professor Robert J. White, for his supervision, guidance, and feedback during this project.
+This project would not have been possible without Sienna P. Butterfield, who provided mentorship, direction, and support during my research.
+I would also like to extend my thanks to Rebecca E. Sizer for her advice, support, and guidance in conducting motif analyses.
+
 \begin{flushright}
-2627 Words
+4034 Words
 \end{flushright}
 \footnotesize
 
@@ -629,245 +649,249 @@ Future -
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-vannini2012}{}}%
-\CSLLeftMargin{1 }%
-\CSLRightInline{Vannini A, Cramer P. \href{https://doi.org/10.1016/j.molcel.2012.01.023}{Conservation between the RNA Polymerase I, II, and III Transcription Initiation Machineries}. \emph{Molecular Cell} 2012; \textbf{45}: 439--446.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-dieci2007}{}}%
-\CSLLeftMargin{2 }%
-\CSLRightInline{Dieci G, Fiorino G, Castelnuovo M, Teichmann M, Pagano A. \href{https://doi.org/10.1016/j.tig.2007.09.001}{The expanding RNA polymerase III transcriptome}. \emph{Trends in Genetics} 2007; \textbf{23}: 614--622.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Raha2010a}{}}%
-\CSLLeftMargin{3 }%
-\CSLRightInline{Raha D, Wang Z, Moqtaderi Z, Wu L, Zhong G, Gerstein M \emph{et al.} \href{https://doi.org/10.1073/pnas.0911315106}{Close association of RNA polymerase II and many transcription factors with Pol III genes}. \emph{Proceedings of the National Academy of Sciences} 2010; \textbf{107}: 3639--3644.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Schramm2002}{}}%
-\CSLLeftMargin{4 }%
-\CSLRightInline{Schramm L, Hernandez N. \href{https://doi.org/10.1101/gad.1018902}{Recruitment of RNA polymerase III to its target promoters}. \emph{Genes \& Development} 2002; \textbf{16}: 2593--2620.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Lassar1983}{}}%
-\CSLLeftMargin{5 }%
-\CSLRightInline{Lassar AB, Martin PL, Roeder RG. \href{https://doi.org/10.1126/science.6356356}{Transcription of Class III Genes: Formation of Preinitiation Complexes}. \emph{Science} 1983; \textbf{222}: 740--748.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Galli1981}{}}%
-\CSLLeftMargin{6 }%
-\CSLRightInline{Galli G, Hofstetter H, Birnstiel ML. Two conserved sequence blocks within eukaryotic {tRNA} genes are major promoter elements. \emph{Nature} 1981; \textbf{294}: 626--631.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-schramm2000}{}}%
-\CSLLeftMargin{7 }%
-\CSLRightInline{Schramm L, Pendergrast PS, Sun Y, Hernandez N. \href{https://doi.org/10.1101/gad.836400}{Different human TFIIIB activities direct RNA polymerase III transcription from TATA-containing and TATA-less promoters}. \emph{Genes \& Development} 2000; \textbf{14}: 2650--2663.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Khoo1994}{}}%
-\CSLLeftMargin{8 }%
-\CSLRightInline{Khoo B, Brophy B, Jackson SP. \href{https://doi.org/10.1101/gad.8.23.2879}{Conserved functional domains of the RNA polymerase III general transcription factor BRF.} \emph{Genes \& Development} 1994; \textbf{8}: 2879--2890.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-kassavetis1990}{}}%
-\CSLLeftMargin{9 }%
-\CSLRightInline{Kassavetis GA, Braun BR, Nguyen LH, Peter Geiduschek E. \href{https://doi.org/10.1016/0092-8674(90)90739-2}{S. cerevisiae TFIIIB is the transcription initiation factor proper of RNA polymerase III, while TFIIIA and TFIIIC are assembly factors}. \emph{Cell} 1990; \textbf{60}: 235--245.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Brooks1977}{}}%
-\CSLLeftMargin{10 }%
-\CSLRightInline{Brooks RF. Continuous protein synthesis is required to maintain the probability of entry into {S} phase. \emph{Cell} 1977; \textbf{12}: 311--317.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Baxter1978}{}}%
-\CSLLeftMargin{11 }%
-\CSLRightInline{Baxter GC, Stanners CP. The effect of protein degradation on cellular growth characteristics. \emph{Journal of cellular physiology} 1978; \textbf{96}: 139--145.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Zetterberg1965}{}}%
-\CSLLeftMargin{12 }%
-\CSLRightInline{Zetterberg A, Killander D. Quantitative cytophotometric and autoradiographic studies on the rate of protein synthesis during interphase in mouse fibroblasts in vitro. \emph{Experimental cell research} 1965; \textbf{40}: 1--11.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Zhang2018}{}}%
-\CSLLeftMargin{13 }%
-\CSLRightInline{Zhang Z, Ye Y, Gong J, Ruan H, Liu C-J, Xiang Y \emph{et al.} Global analysis of {tRNA} and translation factor expression reveals a dynamic landscape of translational regulation in human cancers. \emph{Communications biology} 2018; \textbf{1}: 234.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Pavon-Eternod2009}{}}%
-\CSLLeftMargin{14 }%
-\CSLRightInline{Pavon-Eternod M, Gomes S, Geslain R, Dai Q, Rosner MR, Pan T. {tRNA} over-expression in breast cancer and functional consequences. \emph{Nucleic acids research} 2009; \textbf{37}: 7268--7280.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Winter2000}{}}%
-\CSLLeftMargin{15 }%
-\CSLRightInline{Winter AG, Sourvinos G, Allison SJ, Tosh K, Scott PH, Spandidos DA \emph{et al.} {RNA} polymerase {III} transcription factor {TFIIIC2} is overexpressed in ovarian tumors. \emph{Proceedings of the National Academy of Sciences of the United States of America} 2000; \textbf{97}: 12619--12624.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Krishnan2016}{}}%
-\CSLLeftMargin{16 }%
-\CSLRightInline{Krishnan P, Ghosh S, Wang B, Heyns M, Li D, Mackey JR \emph{et al.} Genome-wide profiling of transfer {RNAs} and their role as novel prognostic markers for breast cancer. \emph{Scientific reports} 2016; \textbf{6}: 32843.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-White1996}{}}%
-\CSLLeftMargin{17 }%
-\CSLRightInline{White RJ, Trouche D, Martin K, Jackson SP, Kouzarides T. Repression of {RNA} polymerase {III} transcription by the retinoblastoma protein. \emph{Nature} 1996; \textbf{382}: 88--90.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Cairns1998}{}}%
-\CSLLeftMargin{18 }%
-\CSLRightInline{Cairns CA, White RJ. p53 is a general repressor of {RNA} polymerase {III} transcription. \emph{The EMBO journal} 1998; \textbf{17}: 3112--3123.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Sutcliffe2000}{}}%
-\CSLLeftMargin{19 }%
-\CSLRightInline{Sutcliffe JE, Brown TR, Allison SJ, Scott PH, White RJ. Retinoblastoma protein disrupts interactions required for {RNA} polymerase {III} transcription. \emph{Molecular and cellular biology} 2000; \textbf{20}: 9192--9202.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Crighton2003}{}}%
-\CSLLeftMargin{20 }%
-\CSLRightInline{Crighton D, Woiwode A, Zhang C, Mandavia N, Morton JP, Warnock LJ \emph{et al.} p53 represses {RNA} polymerase {III} transcription by targeting {TBP} and inhibiting promoter occupancy by {TFIIIB}. \emph{The EMBO journal} 2003; \textbf{22}: 2810--2820.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Gomez-Roman2003}{}}%
-\CSLLeftMargin{21 }%
-\CSLRightInline{Gomez-Roman N, Grandori C, Eisenman RN, White RJ. Direct activation of {RNA} polymerase {III} transcription by c-myc. \emph{Nature} 2003; \textbf{421}: 290--294.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Felton-Edkins2003}{}}%
-\CSLLeftMargin{22 }%
-\CSLRightInline{Felton-Edkins ZA, Fairley JA, Graham EL, Johnston IM, White RJ, Scott PH. The mitogen-activated protein ({MAP}) kinase {ERK} induces {tRNA} synthesis by phosphorylating {TFIIIB}. \emph{The EMBO journal} 2003; \textbf{22}: 2422--2432.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-kuchino1978}{}}%
-\CSLLeftMargin{23 }%
-\CSLRightInline{Kuchino Y, Borek E. \href{https://doi.org/10.1038/271126a0}{Tumour-specific phenylalanine tRNA contains two supernumerary methylated bases}. \emph{Nature} 1978; \textbf{271}: 126--129.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Goodarzi2016}{}}%
-\CSLLeftMargin{24 }%
-\CSLRightInline{Goodarzi H, Nguyen HCB, Zhang S, Dill BD, Molina H, Tavazoie SF. \href{https://doi.org/10.1016/j.cell.2016.05.046}{Modulated Expression of Specific tRNAs Drives Gene Expression and Cancer Progression}. \emph{Cell} 2016; \textbf{165}: 1416--1427.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Pavon-Eternod2013}{}}%
-\CSLLeftMargin{25 }%
-\CSLRightInline{Pavon-Eternod M, Gomes S, Rosner MR, Pan T. \href{https://doi.org/10.1261/rna.037507.112}{Overexpression of initiator methionine tRNA leads to global reprogramming of tRNA expression and increased proliferation in human epithelial cells}. \emph{RNA} 2013; \textbf{19}: 461--466.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Birch2016}{}}%
-\CSLLeftMargin{26 }%
-\CSLRightInline{Birch J, Clarke CJ, Campbell AD, Campbell K, Mitchell L, Liko D \emph{et al.} The initiator methionine {tRNA} drives cell migration and invasion leading to increased metastatic potential in melanoma. \emph{Biology open} 2016; \textbf{5}: 1371--1379.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-raab2011}{}}%
-\CSLLeftMargin{27 }%
-\CSLRightInline{Raab JR, Chiu J, Zhu J, Katzman S, Kurukuti S, Wade PA \emph{et al.} \href{https://doi.org/10.1038/emboj.2011.406}{Human tRNA genes function as chromatin insulators}. \emph{The EMBO Journal} 2011; \textbf{31}: 330--350.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Ebersole2011}{}}%
-\CSLLeftMargin{28 }%
-\CSLRightInline{Ebersole T, Kim J-H, Samoshkin A, Kouprina N, Pavlicek A, White RJ \emph{et al.} \href{https://doi.org/10.4161/cc.10.16.17092}{tRNA genes protect a reporter gene from epigenetic silencing in mouse cells}. \emph{Cell Cycle} 2011; \textbf{10}: 2779--2791.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-sizer2022}{}}%
-\CSLLeftMargin{29 }%
-\CSLRightInline{Sizer RE, Chahid N, Butterfield SP, Donze D, Bryant NJ, White RJ. \href{https://doi.org/10.1016/j.gene.2022.146533}{TFIIIC-based chromatin insulators through eukaryotic evolution}. \emph{Gene} 2022; \textbf{835}: 146533.}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Sung2021}{}}%
-\CSLLeftMargin{30 }%
+\CSLLeftMargin{1 }%
 \CSLRightInline{Sung H, Ferlay J, Siegel RL, Laversanne M, Soerjomataram I, Jemal A \emph{et al.} Global cancer statistics 2020: {GLOBOCAN} estimates of incidence and mortality worldwide for 36 cancers in 185 countries. \emph{CA: a cancer journal for clinicians} 2021; \textbf{71}: 209--249.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-allred2004}{}}%
-\CSLLeftMargin{31 }%
+\CSLLeftMargin{2 }%
 \CSLRightInline{Allred DC, Brown P, Medina D. The origins of estrogen receptor alpha-positive and estrogen receptor alpha-negative human breast cancer. \emph{Breast Cancer Research} 2004; \textbf{6}. doi:\href{https://doi.org/10.1186/bcr938}{10.1186/bcr938}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Johnston2018}{}}%
-\CSLLeftMargin{32 }%
+\CSLLeftMargin{3 }%
 \CSLRightInline{Johnston SJ, Cheung K-L. Endocrine therapy for breast cancer: A model of hormonal manipulation. \emph{Oncology and therapy} 2018; \textbf{6}: 141--156.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Anurag2018}{}}%
-\CSLLeftMargin{33 }%
+\CSLLeftMargin{4 }%
 \CSLRightInline{Anurag M, Ellis MJ, Haricharan S. {DNA} damage repair defects as a new class of endocrine treatment resistance driver. \emph{Oncotarget} 2018; \textbf{9}: 36252--36253.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Costa1989}{}}%
-\CSLLeftMargin{34 }%
+\CSLLeftMargin{5 }%
 \CSLRightInline{Costa RH, Grayson DR, Darnell JE Jr. Multiple hepatocyte-enriched nuclear factors function in the regulation of transthyretin and alpha 1-antitrypsin genes. \emph{Molecular and cellular biology} 1989; \textbf{9}: 1415--1425.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Cirillo2002}{}}%
-\CSLLeftMargin{35 }%
+\CSLLeftMargin{6 }%
 \CSLRightInline{Cirillo LA, Lin FR, Cuesta I, Friedman D, Jarnik M, Zaret KS. Opening of compacted chromatin by early developmental transcription factors {HNF3} ({FoxA}) and {GATA-4}. \emph{Molecular cell} 2002; \textbf{9}: 279--289.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-carroll2005}{}}%
-\CSLLeftMargin{36 }%
+\CSLLeftMargin{7 }%
 \CSLRightInline{Carroll JS, Liu XS, Brodsky AS, Li W, Meyer CA, Szary AJ \emph{et al.} \href{https://doi.org/10.1016/j.cell.2005.05.008}{Chromosome-Wide Mapping of Estrogen Receptor Binding Reveals Long-Range Regulation Requiring the Forkhead Protein FoxA1}. \emph{Cell} 2005; \textbf{122}: 33--43.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-laganiuxe8re2005}{}}%
-\CSLLeftMargin{37 }%
+\CSLLeftMargin{8 }%
 \CSLRightInline{Laganière J, Deblois G, Lefebvre C, Bataille AR, Robert F, Giguère V. \href{https://doi.org/10.1073/pnas.0505575102}{Location analysis of estrogen receptor α target promoters reveals that FOXA1 defines a domain of the estrogen response}. \emph{Proceedings of the National Academy of Sciences} 2005; \textbf{102}: 11651--11656.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hurtado2011}{}}%
-\CSLLeftMargin{38 }%
+\CSLLeftMargin{9 }%
 \CSLRightInline{Hurtado A, Holmes KA, Ross-Innes CS, Schmidt D, Carroll JS. FOXA1 is a key determinant of estrogen receptor function and endocrine response. \emph{Apollo - University of Cambridge Repository} 2021. doi:\href{https://doi.org/10.17863/CAM.63405}{10.17863/CAM.63405}.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Wolf2007}{}}%
-\CSLLeftMargin{39 }%
-\CSLRightInline{Wolf I, Bose S, Williamson EA, Miller CW, Karlan BY, Koeffler HP. {FOXA1}: Growth inhibitor and a favorable prognostic factor in human breast cancer. \emph{International journal of cancer Journal international du cancer} 2007; \textbf{120}: 1013--1022.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Williamson2006}{}}%
-\CSLLeftMargin{40 }%
-\CSLRightInline{Williamson EA, Wolf I, O'Kelly J, Bose S, Tanosaki S, Koeffler HP. {BRCA1} and {FOXA1} proteins coregulate the expression of the cell cycle-dependent kinase inhibitor p27(Kip1). \emph{Oncogene} 2006; \textbf{25}: 1391--1399.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Tsuchiya1999}{}}%
-\CSLLeftMargin{41 }%
-\CSLRightInline{Tsuchiya A, Zhang GJ, Kanno M. Prognostic impact of cyclin-dependent kinase inhibitor p27kip1 in node-positive breast cancer. \emph{Journal of surgical oncology} 1999; \textbf{70}: 230--234.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Fredersdorf1997}{}}%
-\CSLLeftMargin{42 }%
-\CSLRightInline{Fredersdorf S, Burns J, Milne AM, Packham G, Fallis L, Gillett CE \emph{et al.} High level expression of p27\(^{kip1}\) and cyclin {D1} in some human breast cancer cells: Inverse correlation between the expression of p27\(^{kip1}\) and degree of malignancy in human breast and colorectal cancers. \emph{Proceedings of the National Academy of Sciences} 1997; \textbf{94}: 6380--6385.}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Badve2007}{}}%
-\CSLLeftMargin{43 }%
+\CSLLeftMargin{10 }%
 \CSLRightInline{Badve S, Turbin D, Thorat MA, Morimiya A, Nielsen TO, Perou CM \emph{et al.} {FOXA1} expression in breast cancer--correlation with luminal subtype a and survival. \emph{Clinical cancer research: an official journal of the American Association for Cancer Research} 2007; \textbf{13}: 4415--4421.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ross-innes2012}{}}%
-\CSLLeftMargin{44 }%
+\CSLLeftMargin{11 }%
 \CSLRightInline{Ross-Innes CS, Stark R, Teschendorff AE, Holmes KA, Ali HR, Dunning MJ \emph{et al.} \href{https://doi.org/10.1038/nature10730}{Differential oestrogen receptor binding is associated with clinical outcome in breast cancer}. \emph{Nature} 2012; \textbf{481}: 389--393.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Fu2016}{}}%
-\CSLLeftMargin{45 }%
-\CSLRightInline{Fu X, Jeselsohn R, Pereira R, Hollingsworth EF, Creighton CJ, Li F \emph{et al.} {FOXA1} overexpression mediates endocrine resistance by altering the {ER} transcriptome and {IL-8} expression in {ER-positive} breast cancer. \emph{Proceedings of the National Academy of Sciences of the United States of America} 2016; \textbf{113}: E6600--E6609.}
+\leavevmode\vadjust pre{\hypertarget{ref-fu2016}{}}%
+\CSLLeftMargin{12 }%
+\CSLRightInline{Fu X, Jeselsohn R, Pereira R, Hollingsworth EF, Creighton CJ, Li F \emph{et al.} FOXA1 overexpression mediates endocrine resistance by altering the ER transcriptome and IL-8 expression in ER-positive breast cancer. \emph{Proceedings of the National Academy of Sciences} 2016; \textbf{113}. doi:\href{https://doi.org/10.1073/pnas.1612835113}{10.1073/pnas.1612835113}.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-malcolm2022}{}}%
+\CSLLeftMargin{13 }%
+\CSLRightInline{Malcolm JR, Leese NK, Lamond-Warner PI, Brackenbury WJ, White RJ. \href{https://doi.org/10.1016/j.gene.2022.146280}{Widespread association of ERα with RMRP and tRNA genes in MCF-7 cells and breast cancers}. \emph{Gene} 2022; \textbf{821}: 146280.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-dieci2007}{}}%
+\CSLLeftMargin{14 }%
+\CSLRightInline{Dieci G, Fiorino G, Castelnuovo M, Teichmann M, Pagano A. \href{https://doi.org/10.1016/j.tig.2007.09.001}{The expanding RNA polymerase III transcriptome}. \emph{Trends in Genetics} 2007; \textbf{23}: 614--622.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-vannini2012}{}}%
+\CSLLeftMargin{15 }%
+\CSLRightInline{Vannini A, Cramer P. \href{https://doi.org/10.1016/j.molcel.2012.01.023}{Conservation between the RNA Polymerase I, II, and III Transcription Initiation Machineries}. \emph{Molecular Cell} 2012; \textbf{45}: 439--446.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Raha2010a}{}}%
+\CSLLeftMargin{16 }%
+\CSLRightInline{Raha D, Wang Z, Moqtaderi Z, Wu L, Zhong G, Gerstein M \emph{et al.} \href{https://doi.org/10.1073/pnas.0911315106}{Close association of RNA polymerase II and many transcription factors with Pol III genes}. \emph{Proceedings of the National Academy of Sciences} 2010; \textbf{107}: 3639--3644.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Schramm2002}{}}%
+\CSLLeftMargin{17 }%
+\CSLRightInline{Schramm L, Hernandez N. \href{https://doi.org/10.1101/gad.1018902}{Recruitment of RNA polymerase III to its target promoters}. \emph{Genes \& Development} 2002; \textbf{16}: 2593--2620.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Lassar1983}{}}%
+\CSLLeftMargin{18 }%
+\CSLRightInline{Lassar AB, Martin PL, Roeder RG. \href{https://doi.org/10.1126/science.6356356}{Transcription of Class III Genes: Formation of Preinitiation Complexes}. \emph{Science} 1983; \textbf{222}: 740--748.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Galli1981}{}}%
+\CSLLeftMargin{19 }%
+\CSLRightInline{Galli G, Hofstetter H, Birnstiel ML. Two conserved sequence blocks within eukaryotic {tRNA} genes are major promoter elements. \emph{Nature} 1981; \textbf{294}: 626--631.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-schramm2000}{}}%
+\CSLLeftMargin{20 }%
+\CSLRightInline{Schramm L, Pendergrast PS, Sun Y, Hernandez N. \href{https://doi.org/10.1101/gad.836400}{Different human TFIIIB activities direct RNA polymerase III transcription from TATA-containing and TATA-less promoters}. \emph{Genes \& Development} 2000; \textbf{14}: 2650--2663.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Khoo1994}{}}%
+\CSLLeftMargin{21 }%
+\CSLRightInline{Khoo B, Brophy B, Jackson SP. \href{https://doi.org/10.1101/gad.8.23.2879}{Conserved functional domains of the RNA polymerase III general transcription factor BRF.} \emph{Genes \& Development} 1994; \textbf{8}: 2879--2890.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-kassavetis1990}{}}%
+\CSLLeftMargin{22 }%
+\CSLRightInline{Kassavetis GA, Braun BR, Nguyen LH, Peter Geiduschek E. \href{https://doi.org/10.1016/0092-8674(90)90739-2}{S. cerevisiae TFIIIB is the transcription initiation factor proper of RNA polymerase III, while TFIIIA and TFIIIC are assembly factors}. \emph{Cell} 1990; \textbf{60}: 235--245.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Zhang2018}{}}%
+\CSLLeftMargin{23 }%
+\CSLRightInline{Zhang Z, Ye Y, Gong J, Ruan H, Liu C-J, Xiang Y \emph{et al.} Global analysis of {tRNA} and translation factor expression reveals a dynamic landscape of translational regulation in human cancers. \emph{Communications biology} 2018; \textbf{1}: 234.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Pavon-Eternod2009}{}}%
+\CSLLeftMargin{24 }%
+\CSLRightInline{Pavon-Eternod M, Gomes S, Geslain R, Dai Q, Rosner MR, Pan T. {tRNA} over-expression in breast cancer and functional consequences. \emph{Nucleic acids research} 2009; \textbf{37}: 7268--7280.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Winter2000}{}}%
+\CSLLeftMargin{25 }%
+\CSLRightInline{Winter AG, Sourvinos G, Allison SJ, Tosh K, Scott PH, Spandidos DA \emph{et al.} {RNA} polymerase {III} transcription factor {TFIIIC2} is overexpressed in ovarian tumors. \emph{Proceedings of the National Academy of Sciences of the United States of America} 2000; \textbf{97}: 12619--12624.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Krishnan2016}{}}%
+\CSLLeftMargin{26 }%
+\CSLRightInline{Krishnan P, Ghosh S, Wang B, Heyns M, Li D, Mackey JR \emph{et al.} Genome-wide profiling of transfer {RNAs} and their role as novel prognostic markers for breast cancer. \emph{Scientific reports} 2016; \textbf{6}: 32843.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-White1996}{}}%
+\CSLLeftMargin{27 }%
+\CSLRightInline{White RJ, Trouche D, Martin K, Jackson SP, Kouzarides T. Repression of {RNA} polymerase {III} transcription by the retinoblastoma protein. \emph{Nature} 1996; \textbf{382}: 88--90.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Cairns1998}{}}%
+\CSLLeftMargin{28 }%
+\CSLRightInline{Cairns CA, White RJ. p53 is a general repressor of {RNA} polymerase {III} transcription. \emph{The EMBO journal} 1998; \textbf{17}: 3112--3123.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Sutcliffe2000}{}}%
+\CSLLeftMargin{29 }%
+\CSLRightInline{Sutcliffe JE, Brown TR, Allison SJ, Scott PH, White RJ. Retinoblastoma protein disrupts interactions required for {RNA} polymerase {III} transcription. \emph{Molecular and cellular biology} 2000; \textbf{20}: 9192--9202.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Crighton2003}{}}%
+\CSLLeftMargin{30 }%
+\CSLRightInline{Crighton D, Woiwode A, Zhang C, Mandavia N, Morton JP, Warnock LJ \emph{et al.} p53 represses {RNA} polymerase {III} transcription by targeting {TBP} and inhibiting promoter occupancy by {TFIIIB}. \emph{The EMBO journal} 2003; \textbf{22}: 2810--2820.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Gomez-Roman2003}{}}%
+\CSLLeftMargin{31 }%
+\CSLRightInline{Gomez-Roman N, Grandori C, Eisenman RN, White RJ. Direct activation of {RNA} polymerase {III} transcription by c-myc. \emph{Nature} 2003; \textbf{421}: 290--294.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Felton-Edkins2003}{}}%
+\CSLLeftMargin{32 }%
+\CSLRightInline{Felton-Edkins ZA, Fairley JA, Graham EL, Johnston IM, White RJ, Scott PH. The mitogen-activated protein ({MAP}) kinase {ERK} induces {tRNA} synthesis by phosphorylating {TFIIIB}. \emph{The EMBO journal} 2003; \textbf{22}: 2422--2432.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Goodarzi2016}{}}%
+\CSLLeftMargin{33 }%
+\CSLRightInline{Goodarzi H, Nguyen HCB, Zhang S, Dill BD, Molina H, Tavazoie SF. \href{https://doi.org/10.1016/j.cell.2016.05.046}{Modulated Expression of Specific tRNAs Drives Gene Expression and Cancer Progression}. \emph{Cell} 2016; \textbf{165}: 1416--1427.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Pavon-Eternod2013}{}}%
+\CSLLeftMargin{34 }%
+\CSLRightInline{Pavon-Eternod M, Gomes S, Rosner MR, Pan T. \href{https://doi.org/10.1261/rna.037507.112}{Overexpression of initiator methionine tRNA leads to global reprogramming of tRNA expression and increased proliferation in human epithelial cells}. \emph{RNA} 2013; \textbf{19}: 461--466.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Birch2016}{}}%
+\CSLLeftMargin{35 }%
+\CSLRightInline{Birch J, Clarke CJ, Campbell AD, Campbell K, Mitchell L, Liko D \emph{et al.} The initiator methionine {tRNA} drives cell migration and invasion leading to increased metastatic potential in melanoma. \emph{Biology open} 2016; \textbf{5}: 1371--1379.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Sangha2022}{}}%
+\CSLLeftMargin{36 }%
+\CSLRightInline{Sangha AK, Kantidakis T. \href{https://doi.org/10.3390/cimb44070207}{The Aminoacyl-tRNA Synthetase and tRNA Expression Levels Are Deregulated in Cancer and Correlate Independently with Patient Survival}. \emph{Current Issues in Molecular Biology} 2022; \textbf{44}: 3001--3019.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hah2011}{}}%
-\CSLLeftMargin{46 }%
+\CSLLeftMargin{37 }%
 \CSLRightInline{Hah N, Danko CG, Core L, Waterfall JJ, Siepel A, Lis JT \emph{et al.} A rapid, extensive, and transient transcriptional response to estrogen signaling in breast cancer cells. \emph{Cell} 2011; \textbf{145}: 622--634.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-zhong2014}{}}%
-\CSLLeftMargin{47 }%
+\CSLLeftMargin{38 }%
 \CSLRightInline{Zhong Q, Shi G, Zhang Q, Lu L, Levy D, Zhong S. \href{https://doi.org/10.18632/oncotarget.2678}{Tamoxifen represses alcohol-induced transcription of RNA polymerase III-dependent genes in breast cancer cells}. \emph{Oncotarget} 2014; \textbf{5}: 12410--12417.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-fu2019}{}}%
-\CSLLeftMargin{48 }%
+\CSLLeftMargin{39 }%
 \CSLRightInline{Fu X, Pereira R, De Angelis C, Veeraraghavan J, Nanda S, Qin L \emph{et al.} \href{https://doi.org/10.1073/pnas.1911584116}{FOXA1 upregulation promotes enhancer and transcriptional reprogramming in endocrine-resistant breast cancer}. \emph{Proceedings of the National Academy of Sciences} 2019; \textbf{116}: 26823--26834.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-leinonen2010}{}}%
-\CSLLeftMargin{49 }%
+\CSLLeftMargin{40 }%
 \CSLRightInline{Leinonen R, Sugawara H, Shumway M. \href{https://doi.org/10.1093/nar/gkq1019}{The Sequence Read Archive}. \emph{Nucleic Acids Research} 2010; \textbf{39}: D19--D21.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-thegala2022}{}}%
-\CSLLeftMargin{50 }%
+\CSLLeftMargin{41 }%
 \CSLRightInline{Afgan E, Nekrutenko A, Grüning BA, Blankenberg D, Goecks J, Schatz MC \emph{et al.} \href{https://doi.org/10.1093/nar/gkac247}{The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2022 update}. \emph{Nucleic Acids Research} 2022; \textbf{50}: W345--W351.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-langmead2012}{}}%
-\CSLLeftMargin{51 }%
+\CSLLeftMargin{42 }%
 \CSLRightInline{Langmead B, Salzberg SL. \href{https://doi.org/10.1038/nmeth.1923}{Fast gapped-read alignment with Bowtie 2}. \emph{Nature Methods} 2012; \textbf{9}: 357--359.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Karolchik2004}{}}%
-\CSLLeftMargin{52 }%
+\CSLLeftMargin{43 }%
 \CSLRightInline{Karolchik D. \href{https://doi.org/10.1093/nar/gkh103}{The UCSC Table Browser data retrieval tool}. \emph{Nucleic Acids Research} 2004; \textbf{32}: 493D--496.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Chan2016}{}}%
-\CSLLeftMargin{53 }%
+\CSLLeftMargin{44 }%
 \CSLRightInline{Chan PP, Lowe TM. \href{https://doi.org/10.1093/nar/gkv1309}{GtRNAdb 2.0: an expanded database of transfer RNA genes identified in complete and draft genomes}. \emph{Nucleic Acids Research} 2015; \textbf{44}: D184--D189.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lerdrup2016}{}}%
-\CSLLeftMargin{54 }%
+\CSLLeftMargin{45 }%
 \CSLRightInline{Lerdrup M, Johansen JV, Agrawal-Singh S, Hansen K. \href{https://doi.org/10.1038/nsmb.3180}{An interactive environment for agile analysis and visualization of ChIP-sequencing data}. \emph{Nature Structural \& Molecular Biology} 2016; \textbf{23}: 349--357.}
 
+\leavevmode\vadjust pre{\hypertarget{ref-Bailey2015}{}}%
+\CSLLeftMargin{46 }%
+\CSLRightInline{Bailey TL, Johnson J, Grant CE, Noble WS. \href{https://doi.org/10.1093/nar/gkv416}{The MEME Suite}. \emph{Nucleic Acids Research} 2015; \textbf{43}: W39--W49.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Navarro2021}{}}%
+\CSLLeftMargin{47 }%
+\CSLRightInline{Navarro~Gonzalez J, Zweig AS, Speir ML, Schmelter D, Rosenbloom K, Raney BJ \emph{et al.} \href{https://doi.org/10.1093/nar/gkaa1070}{The UCSC Genome Browser database: 2021 update}. \emph{Nucleic Acids Research} 2020; \textbf{49}: D1046--D1057.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Castro-Mondragon2022}{}}%
+\CSLLeftMargin{48 }%
+\CSLRightInline{Castro-Mondragon JA, Riudavets-Puig R, Rauluseviciute I, Berhanu~Lemma R, Turchi L, Blanc-Mathieu R \emph{et al.} \href{https://doi.org/10.1093/nar/gkab1113}{JASPAR 2022: the 9th release of the open-access database of transcription factor binding profiles}. \emph{Nucleic Acids Research} 2021; \textbf{50}: D165--D173.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Moqtaderi2010}{}}%
+\CSLLeftMargin{49 }%
+\CSLRightInline{Moqtaderi Z, Wang J, Raha D, White RJ, Snyder M, Weng Z \emph{et al.} \href{https://doi.org/10.1038/nsmb.1794}{Genomic binding profiles of functionally distinct RNA polymerase III transcription complexes in human cells}. \emph{Nature Structural \& Molecular Biology} 2010; \textbf{17}: 635--640.}
+
 \leavevmode\vadjust pre{\hypertarget{ref-r}{}}%
-\CSLLeftMargin{55 }%
+\CSLLeftMargin{50 }%
 \CSLRightInline{R Core Team. \emph{R: A language and environment for statistical computing}. R Foundation for Statistical Computing: Vienna, Austria, 2023. \url{https://www.R-project.org/}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wickham2019}{}}%
-\CSLLeftMargin{56 }%
+\CSLLeftMargin{51 }%
 \CSLRightInline{Wickham H, Averick M, Bryan J, Chang W, McGowan L, François R \emph{et al.} \href{https://doi.org/10.21105/joss.01686}{Welcome to the tidyverse}. \emph{Journal of Open Source Software} 2019; \textbf{4}: 1686.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ggpubr}{}}%
-\CSLLeftMargin{57 }%
+\CSLLeftMargin{52 }%
 \CSLRightInline{Kassambara A. \emph{Ggpubr: 'ggplot2' based publication ready plots}. 2023\url{https://CRAN.R-project.org/package=ggpubr}.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-fu2016}{}}%
-\CSLLeftMargin{58 }%
-\CSLRightInline{Fu X, Jeselsohn R, Pereira R, Hollingsworth EF, Creighton CJ, Li F \emph{et al.} FOXA1 overexpression mediates endocrine resistance by altering the ER transcriptome and IL-8 expression in ER-positive breast cancer. \emph{Proceedings of the National Academy of Sciences} 2016; \textbf{113}. doi:\href{https://doi.org/10.1073/pnas.1612835113}{10.1073/pnas.1612835113}.}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Torres2019}{}}%
-\CSLLeftMargin{59 }%
+\CSLLeftMargin{53 }%
 \CSLRightInline{Torres AG. \href{https://doi.org/10.1177/1177932219868454}{Enjoy the Silence: Nearly Half of Human tRNA Genes Are Silent}. \emph{Bioinformatics and Biology Insights} 2019; \textbf{13}: 117793221986845.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Sangha2022}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wang2018}{}}%
+\CSLLeftMargin{54 }%
+\CSLRightInline{Wang B, Li D, Kovalchuk I, Apel IJ, Chinnaiyan AM, Wóycicki RK \emph{et al.} \href{https://doi.org/10.1073/pnas.1703029115}{miR-34a directly targets tRNA {\textsubscript{i}} {\textsuperscript{Met}} precursors and affects cellular proliferation, cell cycle, and apoptosis}. \emph{Proceedings of the National Academy of Sciences} 2018; \textbf{115}: 7392--7397.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-sizer2022}{}}%
+\CSLLeftMargin{55 }%
+\CSLRightInline{Sizer RE, Chahid N, Butterfield SP, Donze D, Bryant NJ, White RJ. \href{https://doi.org/10.1016/j.gene.2022.146533}{TFIIIC-based chromatin insulators through eukaryotic evolution}. \emph{Gene} 2022; \textbf{835}: 146533.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-raab2011}{}}%
+\CSLLeftMargin{56 }%
+\CSLRightInline{Raab JR, Chiu J, Zhu J, Katzman S, Kurukuti S, Wade PA \emph{et al.} \href{https://doi.org/10.1038/emboj.2011.406}{Human tRNA genes function as chromatin insulators}. \emph{The EMBO Journal} 2011; \textbf{31}: 330--350.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Ebersole2011}{}}%
+\CSLLeftMargin{57 }%
+\CSLRightInline{Ebersole T, Kim J-H, Samoshkin A, Kouprina N, Pavlicek A, White RJ \emph{et al.} \href{https://doi.org/10.4161/cc.10.16.17092}{tRNA genes protect a reporter gene from epigenetic silencing in mouse cells}. \emph{Cell Cycle} 2011; \textbf{10}: 2779--2791.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Creyghton2010}{}}%
+\CSLLeftMargin{58 }%
+\CSLRightInline{Creyghton MP, Cheng AW, Welstead GG, Kooistra T, Carey BW, Steine EJ \emph{et al.} \href{https://doi.org/10.1073/pnas.1016071107}{Histone H3K27ac separates active from poised enhancers and predicts developmental state}. \emph{Proceedings of the National Academy of Sciences} 2010; \textbf{107}: 21931--21936.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Adams2019}{}}%
+\CSLLeftMargin{59 }%
+\CSLRightInline{Adams EJ, Karthaus WR, Hoover E, Liu D, Gruet A, Zhang Z \emph{et al.} \href{https://doi.org/10.1038/s41586-019-1318-9}{FOXA1 mutations alter pioneering activity, differentiation and prostate cancer phenotypes}. \emph{Nature} 2019; \textbf{571}: 408--412.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-gerhardt2012}{}}%
 \CSLLeftMargin{60 }%
-\CSLRightInline{Sangha AK, Kantidakis T. \href{https://doi.org/10.3390/cimb44070207}{The Aminoacyl-tRNA Synthetase and tRNA Expression Levels Are Deregulated in Cancer and Correlate Independently with Patient Survival}. \emph{Current Issues in Molecular Biology} 2022; \textbf{44}: 3001--3019.}
+\CSLRightInline{Gerhardt J, Montani M, Wild P, Beer M, Huber F, Hermanns T \emph{et al.} \href{https://doi.org/10.1016/j.ajpath.2011.10.021}{FOXA1 Promotes Tumor Progression in Prostate Cancer and Represents a Novel Hallmark of Castration-Resistant Prostate Cancer}. \emph{The American Journal of Pathology} 2012; \textbf{180}: 848--861.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-fullwood2009}{}}%
+\CSLLeftMargin{61 }%
+\CSLRightInline{Fullwood MJ, Liu MH, Pan YF, Liu J, Xu H, Mohamed YB \emph{et al.} \href{https://doi.org/10.1038/nature08497}{An oestrogen-receptor-α-bound human chromatin interactome}. \emph{Nature} 2009; \textbf{462}: 58--64.}
 
 \end{CSLReferences}
 
